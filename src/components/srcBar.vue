@@ -25,20 +25,18 @@
 
   .srcBar {
     position: relative;
-    flex-basis: 20%;
 
     #search {
-      border-radius: 5px;
       padding: 10px 8px;
+      border-radius: 5px;
     }
 
     .fa-magnifying-glass {
-      position: absolute;
-      font-weight: bold;
       color: $material_jungle_green;
+      position: absolute;
       top: 50%;
-      transform: translateY(-50%);
       right: 6%;
+      transform: translateY(-50%);
     }
   }
 

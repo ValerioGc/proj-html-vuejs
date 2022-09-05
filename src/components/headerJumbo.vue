@@ -8,7 +8,7 @@
     </div>
     <div class="imgJumbo-container">
         <img v-for="(img, index) in jumboImg" :src="jumboImg[index]" :class="'imgJumbo-0' +  (index + 1)" :key="img" :alt="'jumbotron image' + ' ' + index" />
-        <img src="../assets/images/icon-youtube-play.png" alt="logo youtube" class="youtube-logo" />
+        <img src="@/assets/images/icon-youtube-play.png" alt="logo youtube" class="center-absolute" />
     </div>
 
 
@@ -28,10 +28,10 @@
       return {
         jumboImg:
             [
-              require('../assets/images/home-6-hero-left-person.png'),
-              require('../assets/images/home-6-hero-poster-final.jpg'),
-              require('../assets/images/home-6-hero-right-person.png'),
-            ]
+              require('@/assets/images/home-6-hero-left-person.png'),
+              require('@/assets/images/home-6-hero-poster-final.jpg'),
+              require('@/assets/images/home-6-hero-right-person.png'),
+            ],
       }
     }
   }
@@ -44,28 +44,27 @@
   @import "../styles/general.scss";
 
   #jumbo {
-    text-align: center;
-    padding: 6rem 0 0;
+    @extend .cubeWhiteColor;
     position: relative;
     width: 80%;
     margin: auto;
+    padding: 6rem 0 0;
+    text-align: center;
 
     .jumboTitle {
-      color: $cube_white;
       padding: 0 0 1rem;
       text-transform: capitalize;
     }
+
     p {
-      @extend .cubeWhiteColor;
       padding-bottom: 3rem;
     }
     // Container Img Jumbotron
     .imgJumbo-container {
       position: relative;
-      bottom: -4rem;
+      top: 4rem;
       display: flex;
       justify-content: center;
-      flex-shrink: 0;
 
       .imgJumbo-01 {
         width: 20%;
@@ -74,26 +73,19 @@
       }
 
       .imgJumbo-02 {
+        width: 60%;
+        margin-bottom:2rem;
         border: 1rem solid $cube_white;
         border-radius: 30px;
-        width: 60%;
-        margin: 0 0 2rem;
       }
 
       .imgJumbo-03 {
         width: 20%;
-        padding-right: 5rem;
         height: 8rem;
+        padding-right: 5rem;
+        align-self: flex-end;
         object-fit: cover;
         object-position: top;
-        align-self: flex-end;
-      }
-
-      .youtube-logo{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
       }
     }
   }

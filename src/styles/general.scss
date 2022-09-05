@@ -20,6 +20,7 @@ li {
 }
 i {
   display: inline-block;
+  font-weight: bold;
 }
 
 .cubeWhiteColor {
@@ -28,4 +29,12 @@ i {
 
 .standardTransition {
   transition: all 0.2s linear 0.1s;
+}
+
+
+.center-absolute{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -31,5 +31,7 @@
     background-color: $median_hint_of_red;
     height: 100vh;
     background-image: url("../assets/images/background-pattern-grid-line.png");
+
   }
+
 </style>

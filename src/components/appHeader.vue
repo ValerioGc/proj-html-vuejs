@@ -1,29 +1,21 @@
 <template>
   <header>
   <div class="header-top">
+    <!-- Logo pagina -->
     <img class="logo" src="@/assets/images/light-logo.png" alt="Logo MaxCoach">
+    <!-- NavBar -->
     <nav>
-      <!-- Logo pagina -->
-      <!-- NavLinks -->
       <ul>
-        <li v-for="(link, index) in navLinks" :key="index">
-          <a href="#" class="navLName">
-            {{link.name}}
-            <i class="fa-solid fa-angle-down"></i>
-          </a>
-        </li>
+      <!-- NavLinks -->
+        <navItems v-for="(link, index) in navLinks" :key="link + index" :idx="index" :navL="navLinks" />
 
+        <!-- Sezione carello e login -->
         <li class="cartUser">
-
-          <!-- <userCartLogin :cartN="cartItems" /> -->
-
-          <!-- Sezione carello -->
           <a href="#">
             <i class="fa-solid fa-cart-shopping">
               <span class="cartItems">{{ cartItems }}</span>
             </i>
           </a>
-          <!-- Login Utente -->
           <a href="#">
             <i class="fa-regular fa-circle-user"></i>
           </a>
@@ -45,11 +37,13 @@
 
   import headerJumbo from './headerJumbo.vue'
   import srcBar from './srcBar.vue'
+  import navItems from './navItems.vue'
 
   export default {
     name:'appHeader',
     searchInput:'',
     components: {
+      navItems,
       headerJumbo,
       srcBar,
     },
@@ -88,7 +82,6 @@
     methods: {
       getInput(input){
         this.searchInput = input.toLowerCase();
-        return this.searchInput;
       }
     }
   }
@@ -104,45 +97,43 @@
     background-color: $cube_port_gore;
 
     .header-top {
+      width: 70%;
+      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 70%;
-      margin: auto;
 
       .logo {
         width: 15%;
       }
 
       nav {
-        display: flex;
         padding: 1rem 0;
-        align-items: center;
-        justify-content: space-between;
         font-weight: bold;
+        display: flex;
         flex-basis: 80%;
+        justify-content: space-between;
+        align-items: center;
 
         ul {
-          justify-content: space-between;
-          align-items: center;
           display: flex;
+          align-items: center;
+          justify-content: space-between;
 
-          .cartItems {
+          .cartUser > * {
             @extend .cubeWhiteColor;
-            background-color: $cube_white;
-            border-radius: 50%;
-            color: $cube_port_gore ;
-            position: relative;
-            bottom: 12px;
-            right: 5px;
-            display: inline-block;
-            font-size: 0.6rem;
-            padding: 1px 3px;
-          }
 
-          .navLName {
-            color: $cube_white;
-            padding-right: 3px ;
+            .cartItems {
+              color: $cube_port_gore;
+              background-color: $cube_white;
+              padding: 1px 3px;
+              font-size: 0.6rem;
+              border-radius: 50%;
+              display: inline-block;
+              position: relative;
+              bottom: 12px;
+              right: 5px;
+            }
           }
         }
       }

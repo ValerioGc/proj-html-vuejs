@@ -19,8 +19,9 @@
 </script>
 
 <style lang="scss">
-@import "../styles/vars.scss";
-@import "../styles/general.scss";
+
+  @import "../styles/vars.scss";
+  @import "../styles/general.scss";
 
   .btn {
     @extend .cubeWhiteColor;
@@ -29,19 +30,20 @@
     font-weight: bold;
     padding: 15px 25px;
     border-radius: 3px;
-    box-shadow: 0px 0px  4px -2px $dark_color;
+    box-shadow: 0 0 4px -2px $dark_color;
 
     &:hover {
       @extend .standardTransition;
     }
   }
-
-.bt1:hover {
-    color: $material_jungle_green;
-    background-color: $cube_white;
-  }
-.bt2:hover {
+  // Hover Bottoni
+  .bt1:hover {
+      color: $material_jungle_green;
+      background-color: $cube_white;
+    }
+  .bt2:hover {
       @extend .cubeWhiteColor;
       background-color: $material_blue_marguerite;
-  }
+    }
+
 </style>
