@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <appHeader :cartItems="addedCart"/>
+    <appMain />
+    <appFooter />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import appHeader from './components/appHeader.vue';
+  import appMain from './components/appMain.vue';
+  import appFooter from './components/appFooter.vue';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    components: {
+      appHeader,
+      appMain,
+      appFooter,
+    },
+    data() {
+      return {
+        addedCart: 0,
+      }
+    }
   }
-}
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+  @import "./styles/vars.scss";
+  @import "./styles/general.scss";
+
 </style>

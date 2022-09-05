@@ -1,3 +1,7 @@
+
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import "vars";
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -8,9 +12,20 @@ html {
   font-family: '', sans-serif;
 }
 
-.btn {
-  color: $fff;
-  background-color: $green;
-  padding: 5px 15px;
-  border-radius: 3px;
+li {
+  list-style: none;
+
+}a {
+  text-decoration: none;
+}
+i {
+  display: inline-block;
+}
+
+.cubeWhiteColor {
+  color: $cube_white;
+}
+
+.standardTransition {
+  transition: all 0.2s linear 0.1s;
 }
