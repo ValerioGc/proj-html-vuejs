@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a :href="navL[idx].link" class="navLName">
+    <a :href="navL[idx].path" class="navLName">
       {{navL[idx].name}}
       <i class="fa-solid fa-angle-down"></i>
     </a>
@@ -26,7 +26,8 @@
 
   .navLName {
     @extend .cubeWhiteColor;
-    padding-right: 3px ;
+    margin-right: 1rem ;
+    font-size: 1.1rem;
   }
 
 </style>

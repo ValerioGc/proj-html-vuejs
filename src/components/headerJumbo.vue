@@ -65,6 +65,7 @@
       top: 4rem;
       display: flex;
       justify-content: center;
+      margin-top: 1rem;
 
       .imgJumbo-01 {
         width: 20%;

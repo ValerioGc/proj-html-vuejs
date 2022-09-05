@@ -27,7 +27,8 @@
     position: relative;
 
     #search {
-      padding: 10px 8px;
+      height: 2.5rem;
+      width: 100%;
       border-radius: 5px;
     }
 

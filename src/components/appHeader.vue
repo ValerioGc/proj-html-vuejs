@@ -1,51 +1,47 @@
 <template>
   <header>
-  <div class="header-top">
-    <!-- Logo pagina -->
-    <img class="logo" src="@/assets/images/light-logo.png" alt="Logo MaxCoach">
     <!-- NavBar -->
-    <nav>
-      <ul>
-      <!-- NavLinks -->
-        <navItems v-for="(link, index) in navLinks" :key="link + index" :idx="index" :navL="navLinks" />
-
-        <!-- Sezione carello e login -->
-        <li class="cartUser">
-          <a href="#">
-            <i class="fa-solid fa-cart-shopping">
-              <span class="cartItems">{{ cartItems }}</span>
-            </i>
-          </a>
-          <a href="#">
-            <i class="fa-regular fa-circle-user"></i>
-          </a>
-        </li>
-
-      </ul>
-      <!-- Barra di ricerca -->
-      <srcBar @usrIn="getInput(input)" />
-    </nav>
-  </div>
-
-
+    <div class="header-top">
+      <!-- Logo pagina -->
+      <img class="logo" src="@/assets/images/light-logo.png" alt="Logo MaxCoach">
+      <nav>
+        <ul>
+          <!-- NavLinks -->
+          <navItems v-for="(link, index) in navLinks" :key="link + index" :idx="index" :navL="navLinks" />
+          <!-- Sezione carello e login -->
+          <li class="cartUser">
+            <a href="#">
+              <i class="fa-solid fa-cart-shopping">
+                <span class="cartItems">{{ cartItems }}</span>
+              </i>
+            </a>
+            <a href="#">
+              <i class="fa-regular fa-circle-user"></i>
+            </a>
+          </li>
+        </ul>
+        <!-- Barra di ricerca -->
+        <srcBar @usrIn="getInput(input)" />
+      </nav>
+    </div>
+    <!-- Jumbotron -->
     <headerJumbo />
-
   </header>
 </template>
 
 <script>
 
-  import headerJumbo from './headerJumbo.vue'
   import srcBar from './srcBar.vue'
   import navItems from './navItems.vue'
+  import headerJumbo from './headerJumbo.vue'
 
   export default {
     name:'appHeader',
     searchInput:'',
     components: {
       navItems,
-      headerJumbo,
       srcBar,
+      headerJumbo,
     },
     props: {
       cartItems: Number,
@@ -111,7 +107,6 @@
         padding: 1rem 0;
         font-weight: bold;
         display: flex;
-        flex-basis: 80%;
         justify-content: space-between;
         align-items: center;
 
@@ -119,6 +114,7 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
+          padding-right: 1rem;
 
           .cartUser > * {
             @extend .cubeWhiteColor;
