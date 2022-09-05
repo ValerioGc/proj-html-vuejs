@@ -32,7 +32,6 @@ i {
   transition: all 0.2s linear 0.1s;
 }
 
-
 .center-absolute{
   position: absolute;
   top: 50%;
@@ -40,3 +39,9 @@ i {
   transform: translate(-50%, -50%);
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
