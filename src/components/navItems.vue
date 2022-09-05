@@ -28,6 +28,10 @@
     @extend .cubeWhiteColor;
     margin-right: 1rem ;
     padding-right: 4px;
+
+    &:hover:not(i) {
+      color: $cube_mountain_meadow;
+    }
   }
 
 </style>

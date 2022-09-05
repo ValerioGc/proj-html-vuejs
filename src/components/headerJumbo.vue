@@ -8,7 +8,7 @@
     </div>
     <div class="imgJumbo-container">
         <img v-for="(img, index) in jumboImg" :src="jumboImg[index]" :class="'imgJumbo-0' +  (index + 1)" :key="img" :alt="'jumbotron image' + ' ' + index" />
-        <img src="@/assets/images/icon-youtube-play.png" alt="logo youtube" class="center-absolute" />
+        <img src="@/assets/images/icon-youtube-play.png" alt="logo youtube" class="yt  center-absolute" />
     </div>
 
 
@@ -87,6 +87,10 @@
         align-self: flex-end;
         object-fit: cover;
         object-position: top;
+      }
+
+      .yt {
+        cursor: pointer;
       }
     }
   }

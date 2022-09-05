@@ -1,40 +1,29 @@
 <template>
   <footer>
-   <div class="footer-link-container">
-     <div>
-       <!-- Address Info -->
-       <ul>
-         <li>Address</li>
-         <li v-for="items in addressInfo" :key="items">{{ items }}</li>
-         <li>
-           <a href="#">
-             <i class="fa-brands fa-square-facebook"></i>
-           </a>
-           <a href="#">
-             <i class="fa-brands fa-twitter"></i>
-           </a>
-           <a href="#">
-             <i class="fa-brands fa-instagram"></i>
-           </a>
-           <a href="#">
-             <i class="fa-brands fa-linkedin"></i>
-           </a>
-         </li>
-       </ul>
-     </div>
-     <div>
-      <!-- Explore Links -->
-       <ul>
-         <li>Explore</li>
-         <linkList v-for="(links, index) in footerLinksExplore" :key="links + index" :indx="index" :linksArr="footerLinksExplore"/>
-       </ul>
-       <!-- Info Links -->
-       <ul>
-         <li>Information</li>
-         <linkList v-for="(links, index) in footerLinksInfo" :key="links + index" :linksArr="footerLinksInfo" :indx="index"  />
-       </ul>
-     </div>
-   </div>
+    <div class="footer-link-container">
+      <!-- Link footer SX -->
+      <div>
+        <!-- Address Info -->
+        <ul>
+          <li class="link-title">Address</li>
+          <li v-for="items in addressInfo" :key="items">
+            {{items}}
+          </li>
+          <li>
+            <a v-for="(link, index) in socialLinks" :href="link.url" :key="index">
+              <i :class="link.icon" class="fa-brands"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Link footer DX -->
+      <div>
+        <!-- Explore Links -->
+        <linkList :linksArr="footerLinksExplore" :title="'Explore'" />
+        <!-- Info Links -->
+        <linkList :linksArr="footerLinksInfo" :title="'Information'" />
+      </div>
+    </div>
     <!-- Parte Inferiore Footer -->
     <div class="sub-footer">
       <p>&copy;2020 Maxcoach. All Rights Reserved</p>
@@ -53,12 +42,28 @@
     },
     data() {
       return {
-        addressInfo:
-          {
+        addressInfo: {
             geo:'382 NE 191st ST # 873394 Miami, FL 33179-3899',
             phone:'+1(305)547- 9909 (9am-5pm EST, Monday - Friday)',
             email:'support@maxcoach.com'
           },
+        socialLinks: [
+          {
+            icon:'fa-square-facebook',
+            url:'#',
+          },
+          {
+            icon:'fa-twitter',
+            url:'#',
+          },         {
+            icon:'fa-instagram',
+            url:'#',
+          },
+          {
+            icon:'fa-linkedin',
+            url:'#',
+          }
+        ],
         footerLinksExplore: [
           {
             name:'Start Here',
@@ -120,6 +125,11 @@
 }
   footer {
     background-color: green;
-    height: 50vh;
+
+    a:hover {
+      text-decoration: underline;
+    }
   }
+
+
 </style>

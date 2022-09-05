@@ -1,29 +1,49 @@
 <template>
-  <li>
-    <a :href="linksArr[indx].url">
-      {{ linksArr[indx].name }}
-    </a>
-  </li>
+  <ul>
+    <li class="link-title">
+      {{ title }}
+    </li>
+    <li class="links" v-for="(links, index) in linksArr" :key="links + index">
+      <a :href="links.url">
+        {{ links.name }}
+      </a>
+    </li>
+  </ul>
 </template>
 
 <script>
 
-export default {
-  name:'linkList',
-  props: {
-    linksArr: Array,
-    indx: Number,
+  export default {
+    name:'linkList',
+    props: {
+      linksArr: Array,
+      title: String,
+    }
   }
-}
+
 </script>
 
 <style lang="scss">
 
-@import "../styles/vars.scss";
-@import "../styles/general.scss";
+  @import "../styles/vars.scss";
+  @import "../styles/general.scss";
 
-footer {
-  background-color: green;
-  height: 50vh;
-}
+  .link-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+
+  }
+  .links {
+    color: $median_gray_chateau;
+
+    a {
+      @extend .links;
+    }
+  }
+
 </style>
