@@ -27,7 +27,7 @@
   .navLName {
     @extend .cubeWhiteColor;
     margin-right: 1rem ;
-    font-size: 1.1rem;
+    padding-right: 4px;
   }
 
 </style>

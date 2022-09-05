@@ -27,9 +27,10 @@
     position: relative;
 
     #search {
-      height: 2.5rem;
       width: 100%;
+      height: 3rem;
       border-radius: 5px;
+      padding: 0 5px;
     }
 
     .fa-magnifying-glass {
