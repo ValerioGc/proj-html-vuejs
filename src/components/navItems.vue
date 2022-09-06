@@ -9,11 +9,17 @@
 
 <script>
 
+import navItemsData from '@/db/navItemsData.json';
+
   export default {
     name:'navItems',
     props: {
-      navL: Array,
       idx: Number,
+    },
+    data() {
+      return {
+        navL: navItemsData.navLinks,
+      }
     }
   }
 

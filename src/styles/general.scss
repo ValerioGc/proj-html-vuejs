@@ -51,6 +51,7 @@ i {
 
 .responsive-container {
   width: 70%;
+  margin: auto;
 
   @media (max-width: $large) {
     & {

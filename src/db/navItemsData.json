@@ -1,0 +1,28 @@
+
+{ "navLinks": [
+    {
+      "name": "Home",
+      "path": "#"
+    },
+    {
+      "name": "Pages",
+      "path": "#"
+    },
+    {
+      "name": "Courses",
+      "path": "#"
+    },
+    {
+      "name": "Features",
+      "path": "#"
+    },
+    {
+      "name": "Blog",
+      "path": "#"
+    },
+    {
+      "name": "Shop",
+      "path": "#"
+    }
+  ]
+}

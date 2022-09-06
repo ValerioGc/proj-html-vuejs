@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="foot-container">
+    <div class="foot-container responsive-container">
       <div class="footer-link-container">
         <!-- Link footer SX -->
         <div class="addressInfo-container">
@@ -20,7 +20,7 @@
         <!-- Link footer DX -->
         <div class="list">
           <!-- Explore Links -->
-          <linkList :linksArr="footerLinksExplore" :title="'Explore'" />
+          <linkList class="info-list" :linksArr="footerLinksExplore" :title="'Explore'" />
           <!-- Info Links -->
           <linkList :linksArr="footerLinksInfo" :title="'Information'" />
         </div>
@@ -37,6 +37,8 @@
 
   import linkList from "@/components/linkList.vue";
 
+  import footerData from '@/db/footerData.json'
+
   export default {
     name:'appFooter',
     components: {
@@ -44,12 +46,15 @@
     },
     data() {
       return {
-        addressInfo: {
+        /* addressInfo: {
             geo:'382 NE 191st ST # 873394 Miami, FL 33179-3899',
             phone:'+1(305)547- 9909 (9am-5pm EST, Monday - Friday)',
             email:'support@maxcoach.com'
-          },
-        socialLinks: [
+          }, */
+        // Company info
+        companyInfo: footerData.companyInfo,
+        // Social Footer
+        /* socialLinks: [
           {
             icon:'fa-square-facebook',
             url:'https://facebook.com',
@@ -65,8 +70,9 @@
             icon:'fa-linkedin',
             url:'https://linkedin.com',
           }
-        ],
-        footerLinksExplore: [
+        ],*/
+        socialLinks: footerData.socialLinks,
+        /* footerLinksExplore: [
           {
             name:'Start Here',
             url:'#',
@@ -90,8 +96,9 @@
             name:'Contact us',
             url:'#',
           }
-        ],
-        footerLinksInfo: [
+        ],*/
+        footerLinksExplore: footerData.footerLinksExplore,
+        /* footerLinksInfo: [
           {
             name:'Membership',
             url:'#',
@@ -107,7 +114,8 @@
             name:'Team of services',
             url:'#',
           }
-        ],
+        ],*/
+        footerLinksInfo: footerData.footerLinksInfo,
       }
     }
   }
@@ -115,9 +123,21 @@
 
 <style lang="scss">
 
-
   @import "../styles/general.scss";
 
+
+  .info-list {
+    padding-right: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 9rem;
+    flex-wrap: wrap;
+
+      li {
+        padding-right: 5rem!important;
+    }
+  }
   .list {
     display: flex;
     justify-content: space-between;
@@ -130,8 +150,6 @@
     background-color: green;
 
     .foot-container {
-      width: 70%;
-      margin: auto;
       padding-top: 3rem;
 
       .footer-link-container{

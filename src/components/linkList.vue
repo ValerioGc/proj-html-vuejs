@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="">
     <li class="link-title">
       {{ title }}
     </li>
@@ -13,6 +13,7 @@
 
 <script>
 
+
   export default {
     name:'linkList',
     props: {
@@ -23,7 +24,7 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 
   @import "@/styles/general.scss";
@@ -31,15 +32,13 @@
   .link-title {
     font-weight: bold;
     font-size: 1.1rem;
+    padding-bottom: 1rem;
 
     &:hover {
       text-decoration: none;
     }
-
   }
-ul {
-  padding-right: 2rem;
-}
+
   .links {
     color: $median_gray_chateau;
 

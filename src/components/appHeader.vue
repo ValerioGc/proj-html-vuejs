@@ -7,7 +7,7 @@
       <nav>
         <ul>
           <!-- NavLinks -->
-          <navItems v-for="(link, index) in navLinks" :key="link + index" :idx="index" :navL="navLinks" />
+          <navItems v-for="(link, index) in navLinks" :key="link + index" :idx="index"  />
           <!-- Sezione carello e login -->
           <li class="cartUser">
             <a href="#">
@@ -93,8 +93,6 @@
     background-color: $cube_port_gore;
 
     .header-top {
-      width: 70%;
-      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
