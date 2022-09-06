@@ -7,7 +7,7 @@
           <!-- Address Info -->
           <ul>
             <li class="link-title">Address</li>
-            <li v-for="items in addressInfo" :key="items">
+            <li v-for="items in companyInfo" :key="items">
               {{items}}
             </li>
             <li>
@@ -46,76 +46,78 @@
     },
     data() {
       return {
-        /* addressInfo: {
-            geo:'382 NE 191st ST # 873394 Miami, FL 33179-3899',
-            phone:'+1(305)547- 9909 (9am-5pm EST, Monday - Friday)',
-            email:'support@maxcoach.com'
-          }, */
         // Company info
         companyInfo: footerData.companyInfo,
+        /* companyInfo: {
+    geo:'382 NE 191st ST # 873394 Miami, FL 33179-3899',
+    phone:'+1(305)547- 9909 (9am-5pm EST, Monday - Friday)',
+    email:'support@maxcoach.com'
+  }, */
         // Social Footer
-        /* socialLinks: [
-          {
-            icon:'fa-square-facebook',
-            url:'https://facebook.com',
-          },
-          {
-            icon:'fa-twitter',
-            url:'https://twitter.com',
-          },         {
-            icon:'fa-instagram',
-            url:'https://instagram.com',
-          },
-          {
-            icon:'fa-linkedin',
-            url:'https://linkedin.com',
-          }
-        ],*/
         socialLinks: footerData.socialLinks,
-        /* footerLinksExplore: [
-          {
-            name:'Start Here',
-            url:'#',
-          },
-          {
-            name:'Blog',
-            url:'#',
-          },         {
-            name:'About us',
-            url:'#',
-          },
-          {
-            name:'Success story',
-            url:'#',
-          },
-          {
-            name:'Courses',
-            url:'#',
-          },
-          {
-            name:'Contact us',
-            url:'#',
-          }
-        ],*/
+        /* socialLinks: [
+  {
+    icon:'fa-square-facebook',
+    url:'https://facebook.com',
+  },
+  {
+    icon:'fa-twitter',
+    url:'https://twitter.com',
+  },         {
+    icon:'fa-instagram',
+    url:'https://instagram.com',
+  },
+  {
+    icon:'fa-linkedin',
+    url:'https://linkedin.com',
+  }
+],*/
+        // Link Footer Explore
         footerLinksExplore: footerData.footerLinksExplore,
-        /* footerLinksInfo: [
-          {
-            name:'Membership',
-            url:'#',
-          },
-          {
-            name:'Purchase guide',
-            url:'#',
-          },         {
-            name:'Privacy policy',
-            url:'#',
-          },
-          {
-            name:'Team of services',
-            url:'#',
-          }
-        ],*/
+        /* footerLinksExplore: [
+  {
+    name:'Start Here',
+    url:'#',
+  },
+  {
+    name:'Blog',
+    url:'#',
+  },         {
+    name:'About us',
+    url:'#',
+  },
+  {
+    name:'Success story',
+    url:'#',
+  },
+  {
+    name:'Courses',
+    url:'#',
+  },
+  {
+    name:'Contact us',
+    url:'#',
+  }
+],*/
+        // Link Footer Info
         footerLinksInfo: footerData.footerLinksInfo,
+        /* footerLinksInfo: [
+  {
+    name:'Membership',
+    url:'#',
+  },
+  {
+    name:'Purchase guide',
+    url:'#',
+  },         {
+    name:'Privacy policy',
+    url:'#',
+  },
+  {
+    name:'Team of services',
+    url:'#',
+  }
+],*/
       }
     }
   }
