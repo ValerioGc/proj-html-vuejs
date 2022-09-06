@@ -25,8 +25,8 @@
 
 <style lang="scss">
 
-  @import "../styles/vars.scss";
-  @import "../styles/general.scss";
+
+  @import "@/styles/general.scss";
 
   .link-title {
     font-weight: bold;
@@ -36,8 +36,10 @@
       text-decoration: none;
     }
 
-
   }
+ul {
+  padding-right: 2rem;
+}
   .links {
     color: $median_gray_chateau;
 

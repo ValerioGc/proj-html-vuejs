@@ -87,7 +87,7 @@
     </section>
 
     <!-- Sesta Sezione -->
-    <section>
+    <section style="text-align: center">
       <p>
         Start today for getting Online Certification<span>Our Blogs</span>
       </p>
@@ -95,11 +95,7 @@
       <btnApp message="Get started now" :type="1" />
 
     </section>
-
-
-
-
-
+    
 
   </main>
 </template>
@@ -115,7 +111,7 @@
     },
     data() {
       return {
-        // Sez 1
+        // Sez 1 Data
         statisticsMaxCoach: [
           {
             count:'1.926',
@@ -136,7 +132,7 @@
             statName:'statisfaction rate',
           }
         ],
-        // Sez 3
+        // Sez 3 Data
         parthList: [
           {
             logo: require('@/assets/images/client-logo-colored-01.png'),
@@ -163,7 +159,7 @@
             name: 'Sixbase',
           }
         ],
-        // Sez 4
+        // Sez 4 Data
         offeredServices: [
           {
             title:'Idea Discussion',
@@ -190,25 +186,22 @@
 
 <style lang="scss">
 
-  @import "@/styles/vars.scss";
+
   @import "@/styles/general.scss";
 
   main {
     background-color: $median_hint_of_red;
     background-image: url("@/assets/images/background-pattern-grid-line.png");
-  }
 
-  .statsN {
-    color: $material_jungle_green;
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  .stats {
-    display: inline-block;
-  }
 
-  section {
-    margin: 10rem 0;
+    .statsN {
+      color: $material_jungle_green;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .stats {
+      display: inline-block;
+    }
   }
 
 </style>

@@ -21,7 +21,7 @@
 
 <style lang="scss">
 
-  @import "../styles/vars.scss";
+
   @import "../styles/general.scss";
 
   .navLName {
@@ -29,7 +29,7 @@
     margin-right: 1rem ;
     padding-right: 4px;
 
-    &:hover:not(i) {
+    &:hover {
       color: $cube_mountain_meadow;
     }
   }

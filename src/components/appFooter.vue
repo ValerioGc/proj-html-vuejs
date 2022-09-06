@@ -1,32 +1,34 @@
 <template>
   <footer>
-    <div class="footer-link-container">
-      <!-- Link footer SX -->
-      <div>
-        <!-- Address Info -->
-        <ul>
-          <li class="link-title">Address</li>
-          <li v-for="items in addressInfo" :key="items">
-            {{items}}
-          </li>
-          <li>
-            <a v-for="(link, index) in socialLinks" :href="link.url" :key="index">
-              <i :class="link.icon" class="fa-brands"></i>
-            </a>
-          </li>
-        </ul>
+    <div class="foot-container">
+      <div class="footer-link-container">
+        <!-- Link footer SX -->
+        <div class="addressInfo-container">
+          <!-- Address Info -->
+          <ul>
+            <li class="link-title">Address</li>
+            <li v-for="items in addressInfo" :key="items">
+              {{items}}
+            </li>
+            <li>
+              <a v-for="(link, index) in socialLinks" :href="link.url" :key="index">
+                <i :class="link.icon" class="fa-brands"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Link footer DX -->
+        <div class="list">
+          <!-- Explore Links -->
+          <linkList :linksArr="footerLinksExplore" :title="'Explore'" />
+          <!-- Info Links -->
+          <linkList :linksArr="footerLinksInfo" :title="'Information'" />
+        </div>
       </div>
-      <!-- Link footer DX -->
-      <div>
-        <!-- Explore Links -->
-        <linkList :linksArr="footerLinksExplore" :title="'Explore'" />
-        <!-- Info Links -->
-        <linkList :linksArr="footerLinksInfo" :title="'Information'" />
+      <!-- Parte Inferiore Footer -->
+      <div class="sub-footer">
+        <p>&copy;2020 Maxcoach. All Rights Reserved</p>
       </div>
-    </div>
-    <!-- Parte Inferiore Footer -->
-    <div class="sub-footer">
-      <p>&copy;2020 Maxcoach. All Rights Reserved</p>
     </div>
   </footer>
 </template>
@@ -50,18 +52,18 @@
         socialLinks: [
           {
             icon:'fa-square-facebook',
-            url:'#',
+            url:'https://facebook.com',
           },
           {
             icon:'fa-twitter',
-            url:'#',
+            url:'https://twitter.com',
           },         {
             icon:'fa-instagram',
-            url:'#',
+            url:'https://instagram.com',
           },
           {
             icon:'fa-linkedin',
-            url:'#',
+            url:'https://linkedin.com',
           }
         ],
         footerLinksExplore: [
@@ -113,23 +115,57 @@
 
 <style lang="scss">
 
-  @import "../styles/vars.scss";
+
   @import "../styles/general.scss";
 
-  .footer-link-container{
+  .list {
     display: flex;
+    justify-content: space-between;
   }
-.sub-footer {
-  text-align: center;
-  padding: 5rem 0;
-}
+  .link-title {
+    color: $dark_color;
+  }
+
   footer {
     background-color: green;
 
-    a:hover {
-      text-decoration: underline;
+    .foot-container {
+      width: 70%;
+      margin: auto;
+      padding-top: 3rem;
+
+      .footer-link-container{
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          padding: 5px 0;
+        }
+
+        .addressInfo-container {
+
+        }
+
+        .addressInfo {
+
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+      .sub-footer {
+        text-align: center;
+        padding: 3rem 0;
+
+
+      }
     }
   }
+
+
+
+
+
 
 
 </style>

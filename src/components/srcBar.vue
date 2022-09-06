@@ -1,6 +1,6 @@
 <template>
   <div class="srcBar">
-    <input v-bind="userInput" @change="$emit('usrIn', userInput)" type="text" id="search" placeholder="Search..." />
+    <input v-model="userInput" @change="$emit('usrIn', userInput)" type="text" id="search" placeholder="Search..." />
     <i class="fa-solid fa-magnifying-glass"></i>
   </div>
 </template>
@@ -20,7 +20,6 @@
 
 <style lang="scss">
 
-  @import "../styles/vars.scss";
   @import "../styles/general.scss";
 
   .srcBar {

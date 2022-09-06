@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
   import appHeader from './components/appHeader.vue';
   import appMain from './components/appMain.vue';
   import appFooter from './components/appFooter.vue';
@@ -24,11 +25,7 @@
       }
     }
   }
+
 </script>
 
-<style lang="scss">
-
-  @import "./styles/vars.scss";
-  @import "./styles/general.scss";
-
-</style>
+<style lang="scss"></style>

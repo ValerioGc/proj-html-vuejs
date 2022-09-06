@@ -1,7 +1,7 @@
 <template>
   <header>
     <!-- NavBar -->
-    <div class="header-top">
+    <div class="header-top responsive-container">
       <!-- Logo pagina -->
       <img class="logo" src="@/assets/images/light-logo.png" alt="Logo MaxCoach">
       <nav>
@@ -21,7 +21,7 @@
           </li>
         </ul>
         <!-- Barra di ricerca -->
-        <srcBar @usrIn="getInput(input)" />
+        <srcBar @usrIn="getInput" />
       </nav>
     </div>
     <!-- Jumbotron -->
@@ -77,7 +77,7 @@
     },
     methods: {
       getInput(input){
-        this.searchInput = input.toLowerCase();
+        this.searchInput = input.toLowerCase().trim();
       }
     }
   }
@@ -86,7 +86,7 @@
 
 <style lang="scss">
 
-  @import "../styles/vars.scss";
+
   @import "../styles/general.scss";
 
   header {

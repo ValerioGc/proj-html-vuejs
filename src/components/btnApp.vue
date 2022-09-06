@@ -1,9 +1,9 @@
 <template>
-  <a v-if="type === 2" class="btn">
+  <a v-if="type === 2"  class="btn bt2">
     <span>{{ message }}</span>
     <i class="fa-solid fa-arrow-right-long"></i>
   </a>
-  <a v-else :class="(type === 1) ? 'bt1' : 'bt2' " class="btn">{{ message }}</a>
+  <a v-else class="btn bt1">{{ message }}</a>
 </template>
 
 <script>
@@ -18,9 +18,8 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-  @import "../styles/vars.scss";
   @import "../styles/general.scss";
 
   .btn {
@@ -28,15 +27,19 @@
     cursor: pointer;
     background-color: $material_jungle_green;
     font-weight: bold;
-    padding: 15px 25px;
+    padding: 1rem 3rem;
     border-radius: 3px;
     box-shadow: 0 0 4px -2px $dark_color;
 
     &:hover {
       @extend .standardTransition;
     }
+
+    i {
+      margin-left: 4px;
+    }
   }
-  // Hover Bottoni
+  // Hover Buttons
   .bt1:hover {
       color: $material_jungle_green;
       background-color: $cube_white;
