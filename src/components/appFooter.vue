@@ -20,14 +20,14 @@
         <!-- Link footer DX -->
         <div class="list">
           <!-- Explore Links -->
-          <linkList class="info-list" :linksArr="footerLinksExplore" :title="'Explore'" />
+          <footerLinkList class="info-list" :linksArr="footerLinksExplore" :title="'Explore'" />
           <!-- Info Links -->
-          <linkList :linksArr="footerLinksInfo" :title="'Information'" />
+          <footerLinkList :linksArr="footerLinksInfo" :title="'Information'" />
         </div>
       </div>
       <!-- Parte Inferiore Footer -->
       <div class="sub-footer">
-        <p>&copy;2020 Maxcoach. All Rights Reserved</p>
+        <p> &copy; {{ copyRInfo }}</p>
       </div>
     </div>
   </footer>
@@ -35,14 +35,16 @@
 
 <script>
 
-  import linkList from "@/components/linkList.vue";
-
+//Components
+  import footerLinkList from "@/components/footerLinkList.vue";
+// DB
   import footerData from '@/db/footerData.json'
 
   export default {
     name:'appFooter',
+
     components: {
-      linkList,
+      footerLinkList,
     },
     data() {
       return {
@@ -118,6 +120,8 @@
     url:'#',
   }
 ],*/
+        // Copyright Info
+        copyRInfo: footerData.copyRInfo
       }
     }
   }
@@ -126,7 +130,6 @@
 <style lang="scss">
 
   @import "../styles/general.scss";
-
 
   .info-list {
     padding-right: 10rem;
@@ -139,6 +142,10 @@
       li {
         padding-right: 5rem!important;
     }
+  }
+  .fa-brands {
+    padding: 1rem 3rem 1rem 0;
+    font-size: 1.5rem;
   }
   .list {
     display: flex;

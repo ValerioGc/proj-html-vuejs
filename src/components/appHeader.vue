@@ -7,7 +7,7 @@
       <nav>
         <ul>
           <!-- NavLinks -->
-          <navItems v-for="(link, index) in navLinks" :key="link + index" :idx="index"  />
+          <navItems :navL="navLinks" v-for="(link, index) in navLinks" :key="link + index" :idx="index"  />
           <!-- Sezione carello e login -->
           <li class="cartUser">
             <a href="#">
@@ -31,9 +31,12 @@
 
 <script>
 
+//Components
   import srcBar from './srcBar.vue'
   import navItems from './navItems.vue'
   import headerJumbo from './headerJumbo.vue'
+// DB
+  import headerData from '@/db/headerData.json';
 
   export default {
     name:'appHeader',
@@ -48,7 +51,8 @@
     },
     data() {
       return {
-        navLinks: [
+        navLinks: headerData.navLinks,
+        /*navLinks: [
           {
             name: 'Home',
             path: '#',
@@ -72,7 +76,7 @@
             name: 'Shop',
             path: '#',
           }
-        ]
+        ]*/
       }
     },
     methods: {

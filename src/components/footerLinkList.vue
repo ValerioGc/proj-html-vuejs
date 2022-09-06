@@ -15,7 +15,7 @@
 
 
   export default {
-    name:'linkList',
+    name:'footerLinkList',
     props: {
       linksArr: Array,
       title: String,
