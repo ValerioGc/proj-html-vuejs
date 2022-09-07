@@ -1,5 +1,5 @@
 
-
+// ****************** Display Flex ******************
 @mixin d-flex($wrap:'no', $justify:undefined, $align:undefined) {
 
   display: flex;
@@ -36,7 +36,7 @@
   }
 }
 
-
+// ****************** Container Responsive *******************
 @mixin responsive-container($initialSize) {
   width: $initialSize;
   @extend .m-auto;

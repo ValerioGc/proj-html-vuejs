@@ -1,7 +1,6 @@
 <template>
   <div :class="(reverse === undefined ) ? 'section-title-container':'rev-title-container'">
-    <p v-if="(subTitle !== undefined) && (subTitleType === undefined)"
-       class="section-subtitle">{{ subTitle }}</p>
+    <p v-if="(subTitle !== undefined) && (subTitleType === undefined)" class="section-subtitle">{{ subTitle }}</p>
     <p v-if="subTitleType !== undefined" class="last-section-subtitle">
       {{ subTitle }}<span class="highlighted">{{ highlight }}</span>
     </p>
@@ -28,7 +27,6 @@
 </script>
 
 <style lang="scss" scoped>
-
 
   @import "@/styles/general.scss";
 
@@ -59,11 +57,9 @@
   }
 
 .standard-title {
-  font-weight: bold;
-
   @extend .capitalize;
+  @extend .bold;
   padding: 0.7rem 0 ;
-
   font-size: 2rem;
 
 }
@@ -85,7 +81,7 @@
 
       .last-section-subtitle {
           color: $dark_color;
-          font-weight: bold;
+          @extend .bold;
         }
       }
 

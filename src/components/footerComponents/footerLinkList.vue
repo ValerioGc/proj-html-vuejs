@@ -29,7 +29,7 @@
   @import "@/styles/general.scss";
 
   .link-title {
-    font-weight: bold;
+    @extend .bold;
     font-size: 1.1rem;
     padding-bottom: 1rem;
 

@@ -11,81 +11,40 @@
   margin: 0;
   padding: 0;
 }
+// Reset 2
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+i {
+  display: inline-block;
+  @extend .bold;
+}
 
+// ******** Regole Comuni ***********
 html {
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   overflow: overlay;
 }
-
-.respdonsive-container {
-  width: 70%;
+.m-auto {
   margin: auto;
-
-  @media (max-width: $large) {
-    & {
-      width: 80% !important;
-
-      @media (max-width: $medium) {
-        & {
-          width: 90% !important;
-
-          @media (max-width: $tablet) {
-            & {
-              width: 100% !important;
-            }
-          }
-        }
-      }
-    }
-  }
 }
-
-.sticky-shadow {
-  box-shadow: 0 0 7px $dark_color;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-i {
-  display: inline-block;
-  font-weight: bold;
-}
-
-.cubeWhiteColor {
-  color: $cube_white;
-}
-
-.standardTransition {
-  transition: all 0.2s linear 0.1s;
-}
-
-
-
-
-// Stili comuni
-.standard-hover {
-  @extend .standardTransition;
-  color: $cube_mountain_meadow;
-  transform: scale(1.3);
-}
-.footer-links-style {
-  color: $material_corduray;
-  text-shadow: 0 0 1px  $dark_color;
-}
-
-// ******** Regole Comuni ***********
 .pos-relative {
   position: relative;
 }
-.m-auto {
-  margin: auto;
+.center-absolute{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Text
+.bold {
+  font-weight: bold;
 }
 .uppercase {
   text-transform: uppercase;
@@ -96,11 +55,31 @@ i {
 .t-align-c{
   text-align: center;
 }
-.center-absolute{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+// Colors & Styles
+.sticky-shadow {
+  box-shadow: 0 0 7px $dark_color;
+}
+.standardTransition {
+  transition: all 0.2s linear 0.1s;
+}
+.standard-hover {
+  @extend .standardTransition;
+  color: $cube_mountain_meadow;
+  transform: scale(1.3);
+}
+.footer-links-style {
+  color: $material_corduray;
+  text-shadow: 0 0 1px  $dark_color;
+}
+.primary-bg-color {
+  background-color: $cube_silver;
+}
+.sec-bg-color {
+  background-color: $median_gray_chateau;
+}
+.cubeWhiteColor {
+  color: $cube_white;
 }
 
 // ScrollBar
@@ -117,11 +96,4 @@ i {
   background-color: $transparent;
   -webkit-box-shadow: inset 0 0 6px $dark_color;
   background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from($cube_port_gore), to($median_rhino), color-stop(.6,$material_blue_marguerite))
-}
-
-.primary-bg-color {
-  background-color: $cube_silver;
-}
-.sec-bg-color {
-  background-color: $median_gray_chateau;
 }

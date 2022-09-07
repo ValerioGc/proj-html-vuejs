@@ -90,7 +90,7 @@
       nav {
         @include d-flex('no', 'end', 'center');
         padding: 1rem 0;
-        font-weight: bold;
+        @extend .bold;
 
         ul {
           @include d-flex('no', 'space-between', 'center');

@@ -39,8 +39,9 @@
     }
     span:first-child {
       @extend .uppercase;
+      @extend .bold;
       padding-bottom: 0.8rem;
-      font-weight: bold;
+
     }
     span:last-child {
       @extend .capitalize;
@@ -52,7 +53,7 @@
   // Stats
   .stats {
     @extend .uppercase;
-    font-weight: bold;
+    @extend .bold;
     font-size: 1.1rem;
     padding-bottom: 2rem;
 

@@ -83,7 +83,7 @@
       .imgJumbo-02 {
         width: 52%;
         margin-bottom: 2.5rem;
-        border: 1rem solid #ffffff;
+        border: 1rem solid $cube_white;
         border-radius: 30px;
         box-shadow: 2px 5px 9px -3px $dark_color;
       }

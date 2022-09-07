@@ -1,14 +1,9 @@
 <template>
       <li class="card">
-        <img v-if="dataSource.img !== undefined"
-             :src="require('@/assets/images/'+ dataSource.img)" alt="'img card">
-        <sectionTitle  :title="dataSource.title"
-                        :subTitle="dataSource.text"
-                        :reverse="rev"/>
-
+        <img v-if="dataSource.img !== undefined" :src="require('@/assets/images/'+ dataSource.img)" alt="'img card">
+        <sectionTitle  :title="dataSource.title" :subTitle="dataSource.text" :reverse="rev"/>
         <!-- Sezione Icone -->
-        <div class="icoSec-Info"
-             v-if="dataSource.icons !== undefined">
+        <div class="icoSec-Info"  v-if="dataSource.icons !== undefined">
           <span>
             <i class="fa-regular" :class="dataSource.icons.icoTy"></i>
             {{ dataSource.icons.icoTyText }}
@@ -23,7 +18,7 @@
 
 <script>
 
-  import sectionTitle from "../common/sectionTitle.vue";
+  import sectionTitle from "@/components/common/sectionTitle.vue";
 
   export default {
     name: 'sectionCard',
