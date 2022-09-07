@@ -284,6 +284,7 @@
         }
       }
     }
+
     // **** Third Section ****
     #thirdSec {
       .exp {
@@ -347,9 +348,18 @@
     #fourthSec {
       @extend .primary-bg-color;
       padding: 2rem 0;
+
+      .card-container{
+        @media (max-width: $medium) {
+          justify-content: center;
+        }
+
         .card {
           width: calc(30% - 1.5rem);
           padding: 1.4rem;
+          @media (max-width: $medium) {
+            width: 80%;
+          }
 
           img {
             object-fit: contain;
@@ -365,8 +375,8 @@
               padding-right: 1rem;
             }
           }
-
-          .section-title-container {
+        }
+        .section-title-container {
             text-align: left;
 
             .section-title {
