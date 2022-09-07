@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li class="navL-container">
     <a :href="navL[idx].path" class="navLName">
       {{navL[idx].name}}
       <i class="fa-solid fa-angle-down"></i>
@@ -19,18 +19,20 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-
-  @import "../styles/general.scss";
+  @import "@/styles/general.scss";
 
   .navLName {
     @extend .cubeWhiteColor;
     margin-right: 1rem ;
-    padding-right: 4px;
+    padding-right: 5px;
 
     &:hover {
-      color: $cube_mountain_meadow;
+      @extend .standard-hover;
+    }
+    &:hover .navL-container{
+      transform: translateY(50px);
     }
   }
 

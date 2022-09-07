@@ -18,18 +18,35 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-  @import "../styles/general.scss";
+  @import "@/styles/general.scss";
 
   .srcBar {
-    position: relative;
+    @extend .pos-relative;
+
 
     #search {
       width: 100%;
       height: 3rem;
       border-radius: 5px;
       padding: 0 5px;
+
+      @media (max-width: $large) {
+        &{
+          width: 80%;
+        }
+        @media (max-width: $medium) {
+          & {
+            width: 70%;
+          }
+          @media (max-width: $tablet) {
+            & {
+              display: none;
+            }
+          }
+        }
+      }
     }
 
     .fa-magnifying-glass {
@@ -38,6 +55,17 @@
       top: 50%;
       right: 6%;
       transform: translateY(-50%);
+
+      @media (max-width: $large) {
+        & {
+          right: 28%;
+        }
+        @media (max-width: $medium) {
+          & {
+            right: 32%;
+          }
+        }
+      }
     }
   }
 

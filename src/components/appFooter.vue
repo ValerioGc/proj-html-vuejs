@@ -7,7 +7,7 @@
           <!-- Address Info -->
           <ul>
             <li class="link-title">Address</li>
-            <li v-for="items in companyInfo" :key="items">
+            <li v-for="items in companyInfo" :key="items" class="addressInfo">
               {{items}}
             </li>
             <li>
@@ -36,91 +36,26 @@
 <script>
 
 //Components
-  import footerLinkList from "@/components/footerLinkList.vue";
+  import footerLinkList from "@/components/footerComponents/footerLinkList.vue";
 // DB
   import footerData from '@/db/footerData.json'
 
   export default {
     name:'appFooter',
-
     components: {
       footerLinkList,
     },
     data() {
       return {
-        // Company info
+      // Company info
         companyInfo: footerData.companyInfo,
-        /* companyInfo: {
-    geo:'382 NE 191st ST # 873394 Miami, FL 33179-3899',
-    phone:'+1(305)547- 9909 (9am-5pm EST, Monday - Friday)',
-    email:'support@maxcoach.com'
-  }, */
-        // Social Footer
+      // Social Footer
         socialLinks: footerData.socialLinks,
-        /* socialLinks: [
-  {
-    icon:'fa-square-facebook',
-    url:'https://facebook.com',
-  },
-  {
-    icon:'fa-twitter',
-    url:'https://twitter.com',
-  },         {
-    icon:'fa-instagram',
-    url:'https://instagram.com',
-  },
-  {
-    icon:'fa-linkedin',
-    url:'https://linkedin.com',
-  }
-],*/
-        // Link Footer Explore
+      // Link Footer Explore
         footerLinksExplore: footerData.footerLinksExplore,
-        /* footerLinksExplore: [
-  {
-    name:'Start Here',
-    url:'#',
-  },
-  {
-    name:'Blog',
-    url:'#',
-  },         {
-    name:'About us',
-    url:'#',
-  },
-  {
-    name:'Success story',
-    url:'#',
-  },
-  {
-    name:'Courses',
-    url:'#',
-  },
-  {
-    name:'Contact us',
-    url:'#',
-  }
-],*/
-        // Link Footer Info
+      // Link Footer Info
         footerLinksInfo: footerData.footerLinksInfo,
-        /* footerLinksInfo: [
-  {
-    name:'Membership',
-    url:'#',
-  },
-  {
-    name:'Purchase guide',
-    url:'#',
-  },         {
-    name:'Privacy policy',
-    url:'#',
-  },
-  {
-    name:'Team of services',
-    url:'#',
-  }
-],*/
-        // Copyright Info
+      // Copyright Info
         copyRInfo: footerData.copyRInfo
       }
     }
@@ -129,62 +64,64 @@
 
 <style lang="scss">
 
-  @import "../styles/general.scss";
+  @import "@/styles/general.scss";
 
   .info-list {
-    padding-right: 10rem;
-    display: flex;
+    @include d-flex('wrap', 'end');
     flex-direction: column;
-    justify-content: flex-end;
-    height: 9rem;
-    flex-wrap: wrap;
+    height: 11rem;
+    padding-right: 10rem;
 
       li {
         padding-right: 5rem!important;
     }
   }
   .fa-brands {
+    @extend .footer-links-style;
     padding: 1rem 3rem 1rem 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
+
+    &:hover {
+      @extend .standard-hover;
+    }
   }
   .list {
-    display: flex;
-    justify-content: space-between;
+    @include d-flex('wrap', 'space-between');
+    margin-right: 15rem;
   }
   .link-title {
     color: $dark_color;
   }
 
   footer {
-    background-color: green;
+    background-color: $cube_silver;
+    @extend .sticky-shadow;
 
     .foot-container {
       padding-top: 3rem;
 
       .footer-link-container{
-        display: flex;
-        justify-content: space-between;
+        @include d-flex('no', 'space-between');
 
-        li {
-          padding: 5px 0;
+        li:not(.link-title) {
+          padding: 0.6rem 0;
         }
 
         .addressInfo-container {
-
+          margin-right: 2rem;
         }
 
         .addressInfo {
-
+          @extend .footer-links-style;
         }
+
         a:hover {
           text-decoration: underline;
         }
       }
       .sub-footer {
-        text-align: center;
         padding: 3rem 0;
-
-
+        @extend .t-align-c;
       }
     }
   }

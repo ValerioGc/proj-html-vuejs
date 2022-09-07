@@ -27,12 +27,13 @@
     cursor: pointer;
     background-color: $material_jungle_green;
     font-weight: bold;
-    padding: 1rem 3rem;
-    border-radius: 3px;
+    padding: 1rem 3.5rem;
+    border-radius: 6px;
     box-shadow: 0 0 4px -2px $dark_color;
 
     &:hover {
       @extend .standardTransition;
+      border-radius: 2px;
     }
 
     i {

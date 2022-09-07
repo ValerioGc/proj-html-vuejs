@@ -1,5 +1,5 @@
 <template>
-  <ul class="">
+  <ul>
     <li class="link-title">
       {{ title }}
     </li>
@@ -24,8 +24,7 @@
 
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss" >
 
   @import "@/styles/general.scss";
 
@@ -40,7 +39,7 @@
   }
 
   .links {
-    color: $median_gray_chateau;
+    @extend .footer-links-style;
 
     a {
       @extend .links;

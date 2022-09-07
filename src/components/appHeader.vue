@@ -3,7 +3,7 @@
     <!-- NavBar -->
     <div class="header-top responsive-container">
       <!-- Logo pagina -->
-      <img class="logo" src="@/assets/images/light-logo.png" alt="Logo MaxCoach">
+      <a class="logo"  href="#"><img src="@/assets/images/light-logo.png" alt="Logo MaxCoach" /></a>
       <nav>
         <ul>
           <!-- NavLinks -->
@@ -32,9 +32,9 @@
 <script>
 
 //Components
-  import srcBar from './srcBar.vue'
-  import navItems from './navItems.vue'
-  import headerJumbo from './headerJumbo.vue'
+  import srcBar from './headerComponents/srcBar.vue'
+  import navItems from './headerComponents/navItems.vue'
+  import headerJumbo from './headerComponents/headerJumbo.vue'
 // DB
   import headerData from '@/db/headerData.json';
 
@@ -52,31 +52,6 @@
     data() {
       return {
         navLinks: headerData.navLinks,
-        /*navLinks: [
-          {
-            name: 'Home',
-            path: '#',
-          },          {
-            name: 'Pages',
-            path: '#',
-          },
-          {
-            name: 'Courses',
-            path: '#',
-          },
-          {
-            name: 'Features',
-            path: '#',
-          },
-          {
-            name: 'Blog',
-            path: '#',
-          },
-          {
-            name: 'Shop',
-            path: '#',
-          }
-        ]*/
       }
     },
     methods: {
@@ -90,45 +65,46 @@
 
 <style lang="scss">
 
-
-  @import "../styles/general.scss";
+  @import "@/styles/general.scss";
 
   header {
     background-color: $cube_port_gore;
 
     .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include d-flex('no', 'space-between', 'center');
 
       .logo {
-        width: 15%;
+        width: 13%;
+
+        img {
+          width: 100%;
+        }
       }
 
       nav {
         padding: 1rem 0;
         font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include d-flex('no', 'end', 'center');
 
         ul {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          @include d-flex('no', 'space-between', 'center');
           padding-right: 1rem;
+          flex-basis: 85%;
 
           .cartUser > * {
             @extend .cubeWhiteColor;
 
+            i:hover {
+              @extend .standard-hover;
+            }
             .cartItems {
+              @extend .pos-relative;
               color: $cube_port_gore;
               background-color: $cube_white;
               padding: 1px 3px;
               font-size: 0.6rem;
               border-radius: 50%;
               display: inline-block;
-              position: relative;
               bottom: 12px;
               right: 5px;
             }

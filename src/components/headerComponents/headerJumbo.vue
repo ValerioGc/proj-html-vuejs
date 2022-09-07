@@ -1,8 +1,8 @@
 <template>
   <div id="jumbo" class="responsive-container ">
     <div>
-      <h1 class="jumboTitle capitalize">learn at your own pace!</h1>
-      <p>Get teamed up with people of the same will.</p>
+      <sectionTitle :title="'Learn at your Own Pace!'"
+                    :subTitle="'get teamed up with people of the same will.'"/>
       <!-- Bottone -->
       <btnApp :message="'Get started for free'" :type="1"/>
     </div>
@@ -17,12 +17,14 @@
 
 <script>
 
-  import btnApp from './btnApp.vue'
+  import btnApp from '../btnApp.vue'
+  import sectionTitle from '../sectionTitle.vue'
 
   export default {
     name: 'headerJumbo',
     components: {
       btnApp,
+      sectionTitle,
     },
     data() {
       return {
@@ -30,7 +32,7 @@
             [
               require('@/assets/images/home-6-hero-left-person.png'),
               require('@/assets/images/home-6-hero-poster-final.jpg'),
-              require('@/assets/images/home-6-hero-right-person.png'),
+              require('@/assets/images/home-6-hero-right-person.png')
             ],
       }
     }
@@ -38,36 +40,40 @@
 
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 
   @import "@/styles/general.scss";
 
   #jumbo {
+    @extend .pos-relative;
+    @extend .m-auto;
+    @extend .t-align-c;
     @extend .cubeWhiteColor;
-    position: relative;
     width: 80%;
-    margin: auto;
-    padding: 6rem 0 0;
-    text-align: center;
+    padding-top: 6rem ;
 
     .jumboTitle {
-      padding: 0 0 1rem;
+      padding-bottom: 1rem;
     }
 
     p {
       padding-bottom: 3rem;
     }
+
     // Container Img Jumbotron
     .imgJumbo-container {
-      position: relative;
+      @include d-flex('no', 'center');
+      @extend .pos-relative;
       top: 5rem;
-      display: flex;
-      justify-content: center;
       margin-top: 1rem;
 
-      .imgJumbo-01 {
+      .imgJumbo-01,
+      .imgJumbo-03 {
         width: 25%;
         object-fit: cover;
+      }
+
+      .imgJumbo-01 {
         object-position: left;
         height: 30rem;
       }
@@ -81,11 +87,9 @@
       }
 
       .imgJumbo-03 {
-        width: 25%;
         height: 9rem;
         padding-right: 9.5rem;
         align-self: flex-end;
-        object-fit: cover;
         object-position: top;
       }
 
