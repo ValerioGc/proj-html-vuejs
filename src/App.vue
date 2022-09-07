@@ -13,8 +13,8 @@
   import appHeader from './components/appHeader.vue';
   import appMain from './components/appMain.vue';
   import appFooter from './components/appFooter.vue';
-  import stickyMenu from "@/components/stickyMenu.vue";
-  import stickyGoTop from "@/components/stickyGoTop.vue";
+  import stickyMenu from "@/components/common/stickyMenu.vue";
+  import stickyGoTop from "@/components/common/stickyGoTop.vue";
 
   export default {
     name: 'App',

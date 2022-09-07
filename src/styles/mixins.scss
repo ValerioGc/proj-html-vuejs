@@ -1,8 +1,8 @@
 
 
 @mixin d-flex($wrap:'no', $justify:undefined, $align:undefined) {
-  display: flex;
 
+  display: flex;
 
   // Wrap
   @if $wrap == 'wrap' {
@@ -10,7 +10,6 @@
   } @else if $wrap == 'no' {
     flex-wrap: nowrap;
   }
-
 
   // Justify
   @if $justify == 'space-around' {
@@ -38,21 +37,22 @@
 }
 
 
-.responsive-container {
-  width: 70%;
-  margin: auto;
+@mixin responsive-container($initialSize) {
+  width: $initialSize;
+  @extend .m-auto;
 
   @media (max-width: $large) {
     & {
-      width: 80% !important;
+      width: $initialSize +10;
 
       @media (max-width: $medium) {
         & {
-          width: 90% !important;
+          width: $initialSize +20;
 
           @media (max-width: $tablet) {
             & {
-              width: 100% !important;
+              width: $initialSize +30;
+              max-width: 100%;
             }
           }
         }

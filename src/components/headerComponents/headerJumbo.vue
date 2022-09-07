@@ -1,24 +1,25 @@
 <template>
   <div id="jumbo" class="responsive-container ">
     <div>
-      <sectionTitle :title="'Learn at your Own Pace!'"
+      <!-- Titolo -->
+      <sectionTitle :reverse="'reverse'"
+                    :title="'Learn at your Own Pace!'"
                     :subTitle="'get teamed up with people of the same will.'"/>
       <!-- Bottone -->
       <btnApp :message="'Get started for free'" :type="1"/>
     </div>
+    <!-- Container img -->
     <div class="imgJumbo-container">
         <img v-for="(img, index) in jumboImg" :src="jumboImg[index]" :class="'imgJumbo-0' +  (index + 1)" :key="img" :alt="'jumbotron image' + ' ' + index" />
         <img src="@/assets/images/icon-youtube-play.png" alt="logo youtube" class="yt  center-absolute" />
     </div>
-
-
   </div>
 </template>
 
 <script>
 
-  import btnApp from '../btnApp.vue'
-  import sectionTitle from '../sectionTitle.vue'
+  import btnApp from '../common/btnApp.vue'
+  import sectionTitle from '../common/sectionTitle.vue'
 
   export default {
     name: 'headerJumbo',
@@ -28,6 +29,7 @@
     },
     data() {
       return {
+      // Img jumbo
         jumboImg:
             [
               require('@/assets/images/home-6-hero-left-person.png'),
@@ -49,7 +51,8 @@
     @extend .m-auto;
     @extend .t-align-c;
     @extend .cubeWhiteColor;
-    width: 80%;
+    @include responsive-container(80%);
+
     padding-top: 6rem ;
 
     .jumboTitle {
@@ -69,26 +72,25 @@
 
       .imgJumbo-01,
       .imgJumbo-03 {
-        width: 25%;
+        width: 24%;
         object-fit: cover;
       }
 
       .imgJumbo-01 {
         object-position: left;
-        height: 30rem;
       }
 
       .imgJumbo-02 {
-        width: 50%;
+        width: 52%;
         margin-bottom: 2.5rem;
         border: 1rem solid #ffffff;
         border-radius: 30px;
-        box-shadow: 0 0 5px -1px $dark_color;
+        box-shadow: 2px 5px 9px -3px $dark_color;
       }
 
       .imgJumbo-03 {
-        height: 9rem;
-        padding-right: 9.5rem;
+        height: 10rem;
+        padding-right: 13%;
         align-self: flex-end;
         object-position: top;
       }

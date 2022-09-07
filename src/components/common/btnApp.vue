@@ -20,14 +20,15 @@
 
 <style lang="scss" scoped>
 
-  @import "../styles/general.scss";
+  @import "../../styles/general.scss";
 
   .btn {
     @extend .cubeWhiteColor;
+    display: inline-block;
     cursor: pointer;
     background-color: $material_jungle_green;
     font-weight: bold;
-    padding: 1rem 3.5rem;
+    padding: 1.2rem 3.5rem;
     border-radius: 6px;
     box-shadow: 0 0 4px -2px $dark_color;
 

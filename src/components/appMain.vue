@@ -1,32 +1,40 @@
 <template>
   <main>
     <!-- Prima Sezione -->
-    <section>
-      <div class="section-container responsive-container">
-        <div>
-          <h3>Let passion and determinations be the guide along the way and develop at your own pace that's comfortable</h3>
-          <p>Fannie Moreno</p>
-          <span>/Founder & CEO</span>
+    <section id="firstSec">
+      <div class="section-container">
+        <div class="ceo-message">
+          <h3 class="txtCeo">Let passion and determinations be the guide along the way and develop at your own pace that's comfortable</h3>
+          <div class="ceo">
+            <span>Fannie Moreno</span>
+            <span>/Founder & CEO</span>
+          </div>
         </div>
         <!-- Statistiche -->
-        <div v-for="(stat, index) in statisticsMaxCoach" :key="index" class="stats">
-          <p class="uppercase statsN">{{ stat.count }}</p>
-          <p class="uppercase stats">{{stat.statName}}</p>
+        <div class="stats-container">
+          <div v-for="(stat, index) in section1Data.statisticsMaxCoach" :key="index" class="stats">
+            <p class="uppercase statsN">{{ stat.count }}</p>
+            <p class="uppercase">{{stat.statName}}</p>
+          </div>
         </div>
         <!-- Sezione Servizi -->
-        <div>
-          <sectionTitle :title="'Services we'"
-                        :title2="'for my clients.'"
-                        :subTitle="'together we can create'"
-                        :highlight="'can provide'"
-                        />
-          <ul>
-            <li v-for="index in servicesInsight" :key="index">
-              <i class="fa-solid fa-check"></i>
-              <span>{{ servicesInsight[index] }}</span>
-            </li>
-          </ul>
-          <btnApp message="Get started for free" />
+        <div class="service-section">
+          <div class="container-card-services">
+
+          </div>
+          <div class="container-services">
+            <sectionTitle :title="section1Data.secTitle"
+                          :title2="section1Data.secTitle2"
+                          :subTitle="section1Data.secSubTitle"
+                          :highlight="section1Data.highlight"/>
+            <ul>
+              <li v-for="service in section1Data.servicesInsight" :key="service">
+                <i class="fa-solid fa-check"></i>
+                <span>{{ service }}</span>
+              </li>
+            </ul>
+            <btnApp message="Get started for free" />
+          </div>
         </div>
       </div>
     </section>
@@ -34,13 +42,11 @@
 
 
     <!-- Seconda Sezione -->
-    <section>
-      <div class="section-container responsive-container">
-        <sectionTitle :title="'Latest featured'"
-                      :subTitle="'chose a course to get started'"
-                      :highlight="'courses'"/>
-        <!-- <p>Choose a course to get started</p>
-        <h2 class="capitalize">Latest featured <span>courses</span></h2> -->
+    <section id="secondSec">
+      <div class="section-container">
+        <sectionTitle :title="section2Data.secTitle"
+                      :subTitle="section2Data.secSubTitle"
+                      :highlight="section2Data.highlight"/>
         <btnApp message="View all courses" :type="2" />
 
         <i class="fa-regular fa-file-lines"></i>
@@ -49,28 +55,32 @@
     </section>
 
     <!-- Terza Sezione -->
-    <section>
-      <div class="section-container responsive-container">
-        <sectionTitle :title="'why people talk about'"
-                      :title2="'?'"
-                      :highlight="'maxCoach'"/>
-        <!-- <p>Choose a course to get started</p>
-        <h2 class="capitalize">Latest featured <span>courses</span></h2> -->
+    <section id="thirdSec">
+      <div class="section-container">
+
+        <sectionTitle :title="section3Data.secTitle"
+                      :title2="section3Data.secTitle2"
+                      :highlight="section3Data.highlight"/>
+
         <btnApp message="View all courses" :type="2" />
+
         <div>
           <img src="" alt="">
           <div></div>
         </div>
         <div>
-          <img v-for="(name, index) in parthList"  :src="parthList.logo" :key="index + name" :alt="'Logo' + ' ' + parthList.name " />
+          <img v-for="(parthner, index) in section3Data.parthList"
+               :src="require('@/assets/images/'+ parthner.logo)"
+               :key="index + parthner" :alt="'Logo' + ' ' + parthner.name " />
         </div>
       </div>
     </section>
 
 
     <!-- Quarta Sezione -->
-    <section>
-      <div class="section-container responsive-container">
+    <section id="fourthSec">
+      <div class="section-container">
+
         <sectionTitle :title="'Latest on'"
                       :subTitle="'enjoy reading on maxcoach'"
                       :highlight="'Our Blogs'"/>
@@ -91,31 +101,30 @@
     </section>
 
     <!-- Quinta Sezione -->
-    <section>
+    <section id="fifthSec">
       <div class="section-container responsive-container">
-        <sectionTitle :title="'Glad to'"
-                      :title2="'Learn'"
-                      :subTitle="'wanna transform Your Life?'"
-                      :highlight="'Help You'"/>
-        <ul>
-          <li v-for="(res, index) in offeredServices " :key="index">
-            <h4>
-              {{res.title}}</h4>
-            <p>{{res.text}}</p>
-          </li>
+        <!-- Titolo sezione-->
+        <sectionTitle :title="section5Data.secTitle"
+                      :title2="section5Data.secTitle2"
+                      :highlight="section5Data.highlight"
+                      :subTitle="section5Data.secSubTitle" />
+        <!-- Cards -->
+        <ul class="card-container">
+          <sectionCard v-for="(res, index) in section5Data.offeredServices "
+                       :key="index"
+                       :dataSource="res"/>
         </ul>
-        <img src="@/assets/images/home-6-services-image.png" alt="Image section" />
+        <img style="width: 100%" src="@/assets/images/home-6-services-image.png" alt="Image section" />
       </div>
     </section>
 
     <!-- Sesta Sezione -->
-    <section style="text-align: center">
-      <div class="section-container responsive-container">
-        <sectionTitle :title="'Start today for getting'"
-                      :title2="'Learn'"
-                      :subTitle="'You can be your own guiding star with our help!'"
-                      :subTitleType="'highlight'"
-                      :highlight="'Online Certification'"/>
+    <section >
+      <div class="section-container">
+        <sectionTitle :title="section6Data.secTitle"
+                      :subTitle="section6Data.secSubTitle"
+                      :highlight="section6Data.highlight"
+                      :subTitleType="section6Data.subTitleType"/>
         <btnApp message="Get started now" :type="1" />
       </div>
     </section>
@@ -127,8 +136,9 @@
 <script>
 
 // Components
-  import sectionTitle from "./sectionTitle.vue"
-  import btnApp from "./btnApp.vue";
+  import sectionTitle from "./common/sectionTitle.vue"
+  import sectionCard from "./mainComponents/sectionCard.vue"
+  import btnApp from "./common/btnApp.vue";
 // DB
   import mainData from "@/db/mainData.json"
 
@@ -137,39 +147,36 @@
     components: {
       btnApp,
       sectionTitle,
+      sectionCard
     },
     data() {
       return {
         // Sez 1 Data
-        statisticsMaxCoach: mainData.statisticsMaxCoach,
-        // statisticsMaxCoach: mainData.section1.statisticsMaxCoach,
-        servicesInsight: [
-            'Select & customize to your preferences',
-            'change the tutor and make arrangements',
-            'partecipate in events to join others',
-            'Get the desired certificate delivered at house'
-        ],
-        /* servicesInsight: mainData.section1.servicesInsight*/
-
+        section1Data: mainData.section1,
 
         // Sez 2 Data
-        featuredCourses: mainData.featuredCourses,
-        // featuredCourses: mainData.section2.featuredCourses,
+
+        section2Data: mainData.section2,
+        featuredCourses: mainData.section2.featuredCourses,
+
 
         // Sez 3 Data
-        parthList: mainData.parthList,
-        // parthList: mainData.section3.parthList,
+        section3Data: mainData.section3,
+
 
         // Sez 4 Data
-        latestArticles: mainData.latestArticles,
-        // latestArticles: mainData.section4.latestArticles,
+
+        section4Data: mainData.section4,
+        latestArticles: mainData.section4.latestArticles,
 
         // Sez 5 Data
-        offeredServices: mainData.offeredServices,
-        // offeredServices: mainData.section5.offeredServices,
+
+        section5Data: mainData.section5,
+        offeredServices: mainData.section5.offeredServices,
+
 
         // Sez 6 Data
-
+        section6Data: mainData.section6
       }
     }
   }
@@ -180,22 +187,82 @@
 
   @import "@/styles/general.scss";
 
-  section {
-    margin: 10rem 0;
+
+  .service-section {
+    @include d-flex('wrap', 'space-between', 'center');
   }
+// **** First Section ****
+  .ceo-message{
+    @extend .m-auto;
+    width: 55%;
+    padding: 6rem 0;
+
+    .txtCeo {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+
+    .ceo {
+      display: block;
+      padding: 2rem 0;
+
+      span:first-child,
+      span:last-child {
+        display: block;
+      }
+      span:first-child {
+        @extend .uppercase;
+        padding-bottom: 0.8rem;
+        font-weight: bold;
+      }
+      span:last-child {
+        color: $material_corduray;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  #fifthSec ul li {
+    text-align: left;
+    list-style: none;
+    display: inline-block;
+    width: 15%;
+    padding: 6rem 2rem 8rem 0;
+  }
+  .section-container {
+    @include responsive-container(70%);
+    @extend .t-align-c;
+    padding: 5rem 0;
+  }
+
   main {
-    background-color: $median_hint_of_red;
-    background-image: url("@/assets/images/background-pattern-grid-line.png");
 
 
-    .statsN {
-      color: $material_jungle_green;
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-    .stats {
-      display: inline-block;
-    }
+      #firstSec {
+        background-image: url("@/assets/images/background-pattern-grid-line.png");
+      }
+      #secondSec {
+          @extend .sec-bg-color;
+        }
+      #fourthSec {
+        @extend .primary-bg-color;
+      }
+      // Sezione statistiche
+      .stats-container {
+        padding-bottom: 6rem;
+
+        .statsN {
+          color: $material_jungle_green;
+          font-size: 2.5rem;
+        }
+        .stats {
+          @extend .uppercase;
+          display: inline-block;
+          padding: 1rem 2rem;
+          font-weight: bold;
+          font-size: 1.1rem;
+        }
+      }
   }
 
 </style>

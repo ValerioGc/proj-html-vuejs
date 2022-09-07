@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="foot-container responsive-container">
+    <div class="foot-container">
       <div class="footer-link-container">
         <!-- Link footer SX -->
         <div class="addressInfo-container">
@@ -87,17 +87,19 @@
   }
   .list {
     @include d-flex('wrap', 'space-between');
-    margin-right: 15rem;
+    margin-right: 12rem;
   }
   .link-title {
     color: $dark_color;
   }
 
   footer {
-    background-color: $cube_silver;
+    margin-top: 2rem;
     @extend .sticky-shadow;
+    @extend .primary-bg-color;
 
     .foot-container {
+      @include responsive-container(70%);
       padding-top: 3rem;
 
       .footer-link-container{

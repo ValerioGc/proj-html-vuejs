@@ -1,7 +1,7 @@
 <template>
   <header>
     <!-- NavBar -->
-    <div class="header-top responsive-container">
+    <div class="header-top">
       <!-- Logo pagina -->
       <a class="logo"  href="#"><img src="@/assets/images/light-logo.png" alt="Logo MaxCoach" /></a>
       <nav>
@@ -69,9 +69,15 @@
 
   header {
     background-color: $cube_port_gore;
+    background-image: url('@/assets/images/wave.svg');
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: top;
 
     .header-top {
       @include d-flex('no', 'space-between', 'center');
+      @include responsive-container(70%);
 
       .logo {
         width: 13%;
@@ -82,9 +88,9 @@
       }
 
       nav {
+        @include d-flex('no', 'end', 'center');
         padding: 1rem 0;
         font-weight: bold;
-        @include d-flex('no', 'end', 'center');
 
         ul {
           @include d-flex('no', 'space-between', 'center');

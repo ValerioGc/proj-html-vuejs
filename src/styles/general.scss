@@ -18,7 +18,7 @@ html {
   overflow: overlay;
 }
 
-.responsive-container {
+.respdonsive-container {
   width: 70%;
   margin: auto;
 
@@ -119,3 +119,9 @@ i {
   background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from($cube_port_gore), to($median_rhino), color-stop(.6,$material_blue_marguerite))
 }
 
+.primary-bg-color {
+  background-color: $cube_silver;
+}
+.sec-bg-color {
+  background-color: $median_gray_chateau;
+}
