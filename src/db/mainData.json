@@ -106,25 +106,42 @@
     ]
   },
   "section4": {
-    "secTitle": "",
+    "secTitle": "Latest on",
+    "secSubTitle": "enjoy reading on maxcoach ",
+    "highlight": "Our Blogs",
     "latestArticles": [
       {
-        "artist":"$40",
-        "title":"Learning to write as a Professional Author",
-        "date":"May 15, 2020",
-        "views":"688"
+        "img": "artist-blog-01-480x325.jpg.jpg",
+        "text":"artist",
+        "title":"Brush Strokes Energize Trees in Paintings",
+        "icons": {
+          "icoTy": "fa-calendar",
+          "icoTyText": "May 15, 2020",
+          "icoTy2": "fa-eye",
+          "icoTyText2": "688"
+        }
       },
       {
-        "artist":"$40",
-        "title":"Learning to write as a Professional Author",
-        "date":"May 15, 2020",
-        "views":"603"
+        "img": "artist-blog-02-480x325.jpg",
+        "text":"artist",
+        "title":"Pocket-Sized Notebook Hold Miniature Paintings",
+        "icons": {
+          "icoTy":"fa-calendar",
+          "icoTyText":"May 15, 2020",
+          "icoTy2":"fa-eye",
+          "icoTyText2":"603"
+        }
       },
       {
-        "artist":"$40",
-        "title":"Learning to write as a Professional Author",
-        "date":"May 15, 2020",
-        "views":"397"
+        "img": "artist-blog-03-480x325.jpg",
+        "text":"artist",
+        "title":"Connection Between Self-Portraits and Identity",
+        "icons": {
+          "icoTy":"fa-calendar",
+          "icoTyText":"May 15, 2020",
+          "icoTy2":"fa-eye",
+          "icoTyText2":"397"
+        }
       }
     ]
   },

@@ -44,9 +44,11 @@
     <!-- Seconda Sezione -->
     <section id="secondSec">
       <div class="section-container">
+
         <sectionTitle :title="section2Data.secTitle"
                       :subTitle="section2Data.secSubTitle"
                       :highlight="section2Data.highlight"/>
+
         <btnApp message="View all courses" :type="2" />
 
         <i class="fa-regular fa-file-lines"></i>
@@ -80,35 +82,28 @@
     <!-- Quarta Sezione -->
     <section id="fourthSec">
       <div class="section-container">
-
-        <sectionTitle :title="'Latest on'"
-                      :subTitle="'enjoy reading on maxcoach'"
-                      :highlight="'Our Blogs'"/>
-
-        <i class="fa-regular fa-calendar"></i>
-        <i class="fa-solid fa-eye"></i>
-        <ul>
-          <li>
-
-          </li>
-          <li>
-
-          </li>
-          <li>
-          </li>
+      <!-- Titolo Sezione -->
+        <sectionTitle :title="section4Data.secTitle"
+                      :subTitle="section4Data.secSubTitle"
+                      :highlight="section4Data.highlight"/>
+        <!-- Cards -->
+        <ul class="card-container">
+          <sectionCard v-for="(res, index) in section4Data.latestArticles "
+                       :key="index"
+                       :dataSource="res"/>
         </ul>
       </div>
     </section>
 
-    <!-- Quinta Sezione -->
+  <!-- Quinta Sezione -->
     <section id="fifthSec">
       <div class="section-container responsive-container">
-        <!-- Titolo sezione-->
+      <!-- Titolo sezione-->
         <sectionTitle :title="section5Data.secTitle"
                       :title2="section5Data.secTitle2"
                       :highlight="section5Data.highlight"
                       :subTitle="section5Data.secSubTitle" />
-        <!-- Cards -->
+      <!-- Cards -->
         <ul class="card-container">
           <sectionCard v-for="(res, index) in section5Data.offeredServices "
                        :key="index"
@@ -118,18 +113,18 @@
       </div>
     </section>
 
-    <!-- Sesta Sezione -->
-    <section >
+  <!-- Ultima Sezione -->
+    <section id="lastSec">
       <div class="section-container">
+        <!-- Titolo sezione-->
         <sectionTitle :title="section6Data.secTitle"
                       :subTitle="section6Data.secSubTitle"
                       :highlight="section6Data.highlight"
                       :subTitleType="section6Data.subTitleType"/>
+        <!-- Bottone -->
         <btnApp message="Get started now" :type="1" />
       </div>
     </section>
-    
-
   </main>
 </template>
 
@@ -165,16 +160,9 @@
 
 
         // Sez 4 Data
-
         section4Data: mainData.section4,
-        latestArticles: mainData.section4.latestArticles,
-
         // Sez 5 Data
-
         section5Data: mainData.section5,
-        offeredServices: mainData.section5.offeredServices,
-
-
         // Sez 6 Data
         section6Data: mainData.section6
       }

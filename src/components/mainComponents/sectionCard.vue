@@ -1,12 +1,20 @@
 <template>
-    <ul>
       <li class="card">
         <img :src="require('@/assets/images/'+ dataSource.img)" alt="'img card">
         <h4>{{dataSource.title}}</h4>
         <p>{{dataSource.text}}</p>
+        <div class="icoSec-Info"
+             v-if="dataSource.icons !== undefined">
+          <span>
+            <i class="fa-regular" :class="dataSource.icoTy"></i>
+            {{ dataSource.icoTyText }}
+          </span>
+          <span class="sec-info">
+            <i class="fa-regular" :class="dataSource.icoTy"></i>
+            {{ dataSource.icoTyText }}
+          </span>
+        </div>
       </li>
-    </ul>
-
 </template>
 
 <script>
