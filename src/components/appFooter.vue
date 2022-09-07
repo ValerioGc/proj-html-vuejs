@@ -87,23 +87,23 @@
   }
   .list {
     @include d-flex('wrap', 'space-between');
-    margin-right: 12rem;
+    margin-right: 4%;
   }
   .link-title {
     color: $dark_color;
   }
 
   footer {
-    margin-top: 2rem;
-    @extend .sticky-shadow;
     @extend .primary-bg-color;
+    margin-top: 2rem;
+    box-shadow: 0 0 5px -2px $dark_color;
 
     .foot-container {
       @include responsive-container(70%);
       padding-top: 3rem;
 
       .footer-link-container{
-        @include d-flex('no', 'space-between');
+        @include d-flex('wrap', 'space-between');
 
         li:not(.link-title) {
           padding: 0.6rem 0;

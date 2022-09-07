@@ -37,10 +37,10 @@
   }
 
   .rev-title-container {
+    @extend .cubeWhiteColor;
     display: flex;
     flex-direction: column-reverse;
     padding-bottom: 2.5rem;
-    @extend .cubeWhiteColor;
 
     .section-title {
       @extend .standard-title;
@@ -56,13 +56,12 @@
     }
   }
 
-.standard-title {
-  @extend .capitalize;
-  @extend .bold;
-  padding: 0.7rem 0 ;
-  font-size: 2rem;
-
-}
+  .standard-title {
+    @extend .capitalize;
+    @extend .bold;
+    padding: 0.7rem 0 ;
+    font-size: 2rem;
+  }
 
   .section-title-container {
       @extend .t-align-c;
@@ -75,13 +74,13 @@
 
       .section-subtitle {
         @extend .uppercase;
-        color: $material_corduray;
+        color: $cube_dove_gray;
         font-weight: lighter;
       }
 
       .last-section-subtitle {
-          color: $dark_color;
           @extend .bold;
+          color: $dark_color;
         }
       }
 

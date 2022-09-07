@@ -8,6 +8,9 @@
         <ul>
           <!-- NavLinks -->
           <navItems :navL="navLinks" v-for="(link, index) in navLinks" :key="link + index" :idx="index"  />
+          <li>
+            <i class="fa-solid fa-bars"></i>
+          </li>
           <!-- Sezione carello e login -->
           <li class="cartUser">
             <a href="#">
@@ -96,7 +99,14 @@
           @include d-flex('no', 'space-between', 'center');
           padding-right: 1rem;
           flex-basis: 85%;
+          .fa-bars {
+            color: $cube_white;
+            display: none;
 
+            @media (max-width: $medium) {
+              display: inline-block;
+            }
+          }
           .cartUser > * {
             @extend .cubeWhiteColor;
 

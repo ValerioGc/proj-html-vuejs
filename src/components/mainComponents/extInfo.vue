@@ -45,7 +45,7 @@
     }
     span:last-child {
       @extend .capitalize;
-      color: $material_corduray;
+      color: $cube_dove_gray;
       font-size: 0.9rem;
     }
   }

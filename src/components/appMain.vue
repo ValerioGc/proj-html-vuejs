@@ -19,7 +19,7 @@
           <div class="container-card-services">
             <!-- Cards -->
             <ul class="card-container">
-              <sectionCard v-for="(res, index) in section1Data.cards " :key="index" :dataSource="res"/>
+              <sectionCard v-for="(res, index) in section1Data.cards " :key="index" :rev="'reverse'" :dataSource="res"/>
             </ul>
           </div>
           <div class="container-services">
@@ -57,15 +57,18 @@
         <sectionTitle :title="section3Data.secTitle" :title2="section3Data.secTitle2" :highlight="section3Data.highlight"/>
       <!-- Sezione Testimonials -->
         <div class="exp">
-          <img src="@/assets/images/testimonial-avata-02.jpg" alt="Img Testimonial Hollace">
-          <div>
+          <div class="testimonial-cont">
+            <img class="testimonial-avatar" src="@/assets/images/testimonial-avata-02.jpg" alt="Img Testimonial Hollace"/>
+            <img class="decoration" src="@/assets/images/maxcoach-shape-05.png" alt="svg decoration"/>
+          </div>
+          <div class="testimonial-text">
             <p>{{ section3Data.textSection }}</p>
           <!-- Componente Info -->
             <extInfo :name="section3Data.name" :role="section3Data.role" :type="'advisor'"/>
           </div>
         </div>
       <!-- Img Parthner -->
-        <div>
+        <div class="parth-logo-container">
           <img v-for="(parthner, index) in section3Data.parthList" :src="require('@/assets/images/'+ parthner.logo)" :key="index + parthner" :alt="'Logo' + ' ' + parthner.name " />
         </div>
       </div>
@@ -92,7 +95,7 @@
         <ul class="card-container">
           <sectionCard v-for="(res, index) in section5Data.offeredServices " :key="index" :dataSource="res" :rev="'yes'"/>
         </ul>
-        <img src="@/assets/images/home-6-services-image.png" alt="Image section" />
+        <img class="fifthSec-img" src="@/assets/images/home-6-services-image.png" alt="Image fifth section" />
       </div>
     </section>
 
@@ -154,109 +157,269 @@
     .section-container {
       @include responsive-container(70%);
       @extend .t-align-c;
-      padding: 5rem 0;
+      margin: 5rem auto;
     }
-
-
+    .card-container {
+      @include d-flex('wrap', 'space-between', 'center')
+    }
     // **** First Section ****
     #firstSec {
       background-image: url("@/assets/images/background-pattern-grid-line.png");
-
       // CEO Msg
       .ceo-message {
         @extend .m-auto;
         width: 65%;
         padding: 7rem 0;
-
         .txtCeo {
           font-size: 2rem;
           line-height: 3rem;
         }
       }
-   // section stats
+      // section stats
       .stats-container {
         @include d-flex('wrap', 'space-around', 'center');
         padding-bottom: 6rem;
       }
-    // Services
+      // Services
       .service-section {
-        @include d-flex('', 'space-between', 'center');
+        @include d-flex('', 'center', 'center');
+        height: 80vh;
 
-        .container-card-services,
         .container-services {
-          width: calc(60% - 1rem);
+          width: calc(90%);
+          padding-left: 3rem;
         }
         .container-card-services {
           @include d-flex('wrap', 'space-between', 'center');
+          height: 100%;
 
           .card-container {
-            @include d-flex('wrap', 'space-between', '');
+            @include d-flex('wrap', 'space-between', 'start');
+            height: 100%;
+            width: calc(65%);
+
+            // Cards
+            & li:nth-child(2),
+            & li:nth-child(4) {
+              align-self: flex-end;
+            }
+            & li:nth-child(1),
+            & li:nth-child(2) {
+              display: flex;
+              flex-direction: column-reverse;
+            }
+
+            .card {
+              width: calc(100% / 2 - 1rem);
+
+              border: 1px solid $dark_color;
+              box-shadow: 0 0 5px -2px $dark_color;
+
+              .rev-title-container {
+                color: $dark_color;
+              }
+              .section-title {
+                font-size: 1rem;
+              }
+
+              img {
+                height: 10rem;
+                width: 100%;
+                object-fit: contain;
+              }
+            }
           }
         }
         .container-services * {
           text-align: left;
         }
-      // Cards
-        .card-container {
+      }
+    }
+    // **** Second Section ****
+    #secondSec {
+      padding: 1rem 0 0.5rem;
+      @extend .sec-bg-color;
+
+      .btn {
+        margin: 5rem 0;
+      }
+
+      .card {
+        @include d-flex('', 'center', 'center');
+        flex-direction: row;
+        padding: 1rem ;
+        width: 45%;
+        @media (max-width: $medium) {
+          width: 100%;
+          flex-wrap: wrap;
+        }
+        .txtCard {
+          padding: 2rem ;
+        }
+        .section-title {
+          @extend .bold;
+          text-align: left;
+          font-size: 1.2rem;
+          padding-bottom: 1rem;
+        }
+        .section-subtitle {
+          @extend .bold;
+          text-align: left;
+          font-size: 1.2rem!important;
+          color: $cube_mountain_meadow;
+          text-shadow: 2px 2px 2px $dark_color;
+        }
+        .icoSec-Info  {
           @include d-flex('wrap', 'space-between', 'center');
+        }
+        img {
+          border-radius: 50%;
+          width: 10rem;
+          height: 10rem;
+          object-fit: cover;
+        }
+        // Hover Card
+        &:hover {
+          border-radius: 5px;
+          color: $material_jungle_green;
+        }
+      }
+    }
+    // **** Third Section ****
+    #thirdSec {
+      .exp {
+        @include d-flex('wrap', 'space-between', 'center');
+        width: 70%;
+        margin: 3rem auto 5rem;
+        @media (max-width: $medium) {
+          justify-content: center;
+        }
 
-          .card {
-            width: calc(100% / 4 - 1rem);
-            border: 1px solid $dark_color;
+          .testimonial-text {
+            width: 70%;
+            text-align: left;
+            padding: 0.2rem 0.5rem;
 
-            .section-title {
-              font-size: 1rem;
+            p {
+              font-size: 1.4rem;
             }
-            img {
-              width: 10%;
-            }
+          }
+
+        .testimonial-cont{
+          @extend .pos-relative;
+          align-self: stretch;
+          padding-bottom: 1rem;
+
+          .testimonial-avatar {
+            border-radius: 50%;
+            width: 10rem;
+          }
+          .decoration {
+            position: absolute;
+            transform: translate(-95%, 110%);
+            z-index: -1;
+            width: 6rem;
+          }
+      }
+      }
+
+      .parth-logo-container{
+        @include d-flex('wrap', 'space-around', 'center');
+
+        @media (max-width: $medium) {
+          justify-content: center;
+        }
+
+        img {
+          width: 7rem;
+          object-fit: contain;
+          height: 4rem;
+          margin: 1rem 0;
+
+          @media (max-width: $medium) {
+            margin-right: 1rem;
+
           }
         }
       }
+    }
 
+    // **** Fourth Section ****
+    #fourthSec {
+      @extend .primary-bg-color;
+      padding: 2rem 0;
+        .card {
+          width: calc(30% - 1.5rem);
+          padding: 1.4rem;
 
+          img {
+            object-fit: contain;
+            width: 100%;
+          }
 
+          .icoSec-Info {
+            text-align: left;
+            i {
+              padding-right: 0.3rem;
+            }
+            span {
+              padding-right: 1rem;
+            }
+          }
 
+          .section-title-container {
+            text-align: left;
 
+            .section-title {
+              font-size: 1.4rem;
+              padding: 1rem 0;
+            }
 
-
-
-      // **** Second Section ****
-      #secondSec {
-        @extend .sec-bg-color;
-      }
-
-      // **** Third Section ****
-      #thirdSec {
-
-        .exp {
-          @include d-flex('wrap', 'space-between', 'center');
-          @extend .m-auto;
-          width: 70%;
+            .section-subtitle {
+              font-weight: normal;
+              padding-top: 1rem;
+            }
+          }
         }
-      }
+    }
 
-      // **** Fourth Section ****
-      #fourthSec {
-        @extend .primary-bg-color;
-      }
-
-      // **** Fifth Section ****
-      #fifthSec ul li {
+    // **** Fifth Section ****
+    #fifthSec {
+      .card-container {
+        @include d-flex('wrap', 'space-between', 'center');
         text-align: left;
-        list-style: none;
-        display: inline-block;
-        width: 15%;
-        padding: 6rem 2rem 8rem 0;
+        padding: 5rem 0;
 
-        img {
-          width: 100%;
+        @media (max-width: $medium) {
+          justify-content: center;
+        }
+
+        .card {
+          padding: 1.8rem 1rem;
+          width: 25%;
+          @media (max-width: $medium) {
+            width: 60%;
+          }
+
+          .section-subtitle,
+          .section-title {
+            color: $dark_color;
+          }
+          .section-title {
+            font-size: 1rem;
+            color: $dark_color;
+          }
+          .section-subtitle {
+            font-size: 1rem;
+            color: $cube_dove_gray;
+          }
+          img {
+            width: 5rem;
+          }
         }
       }
-
-      // **** Last Section ****
-      #lastSec {
-
+      .fifthSec-img {
+        width: 100%;
       }
     }
   }

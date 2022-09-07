@@ -28,6 +28,10 @@
     margin-right: 1rem ;
     padding-right: 5px;
 
+    @media (max-width: $medium) {
+      display: none;
+    }
+
     &:hover {
       @extend .standard-hover;
     }
