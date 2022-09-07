@@ -1,8 +1,7 @@
 <template>
       <li class="card">
-        <img :src="require('@/assets/images/'+ dataSource.img)" alt="'img card">
-        <!-- <h4>{{dataSource.title}}</h4>
-        <p>{{dataSource.text}}</p> -->
+        <img v-if="dataSource.img !== undefined"
+             :src="require('@/assets/images/'+ dataSource.img)" alt="'img card">
         <sectionTitle  :title="dataSource.title"
                         :subTitle="dataSource.text"
                         :reverse="rev"/>
@@ -15,8 +14,8 @@
             {{ dataSource.icons.icoTyText }}
           </span>
           <span class="sec-info">
-            <i class="fa-regular" :class="dataSource.icons.icoTy"></i>
-            {{ dataSource.icons.icoTyText }}
+            <i class="fa-regular" :class="dataSource.icons.icoTy2"></i>
+            {{ dataSource.icons.icoTyText2 }}
           </span>
         </div>
       </li>
@@ -24,7 +23,7 @@
 
 <script>
 
-  import sectionTitle from "@/components/common/sectionTitle.vue";
+  import sectionTitle from "../common/sectionTitle.vue";
 
   export default {
     name: 'sectionCard',
@@ -33,7 +32,7 @@
       rev: String,
     },
     components: {
-      sectionTitle
+      sectionTitle,
     },
   }
 

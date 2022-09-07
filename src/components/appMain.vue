@@ -3,22 +3,30 @@
     <!-- Prima Sezione -->
     <section id="firstSec">
       <div class="section-container">
+        <!-- Messaggio CEO -->
         <div class="ceo-message">
           <h3 class="txtCeo">Let passion and determinations be the guide along the way and develop at your own pace that's comfortable</h3>
-          <!-- Testimonial component -->
-          <nameRole :name="section3Data.name" :role="section1Data.role"/>
+          <!-- Testimonial/Stats component -->
+          <extInfo :name="section1Data.name"
+                   :role="section1Data.role"
+                   :type="'advisor'" />
         </div>
         <!-- Statistiche -->
         <div class="stats-container">
-          <div v-for="(stat, index) in section1Data.statisticsMaxCoach" :key="index" class="stats">
-            <p class="uppercase statsN">{{ stat.count }}</p>
-            <p class="uppercase">{{stat.statName}}</p>
-          </div>
+          <!-- Testimonial/Stats component -->
+          <extInfo  v-for="(stats, index) in section1Data.statisticsMaxCoach" :key="index"
+                    :name="stats.count"
+                    :role="stats.statName"/>
         </div>
         <!-- Sezione Servizi -->
         <div class="service-section">
           <div class="container-card-services">
-
+            <!-- Cards -->
+            <ul class="card-container">
+              <sectionCard v-for="(res, index) in section1Data.cards "
+                           :key="index"
+                           :dataSource="res"/>
+            </ul>
           </div>
           <div class="container-services">
             <sectionTitle :title="section1Data.secTitle"
@@ -43,12 +51,9 @@
     <section id="secondSec">
       <div class="section-container">
         <!-- Titolo Sezione -->
-
         <sectionTitle :title="section2Data.secTitle"
                       :subTitle="section2Data.secSubTitle"
                       :highlight="section2Data.highlight"/>
-
-
         <!-- Cards -->
         <ul class="card-container">
           <sectionCard v-for="(res, index) in section2Data.featuredCourses "
@@ -57,7 +62,6 @@
         </ul>
         <!-- Bottone -->
         <btnApp message="View all courses" :type="2" />
-
       </div>
     </section>
 
@@ -74,7 +78,9 @@
           <img src="@/assets/images/testimonial-avata-02.jpg" alt="Img Testimonial Hollace">
           <div>
             <p>{{ section3Data.textSection }}</p>
-            <nameRole :name="section3Data.name" :role="section3Data.role"/>
+            <extInfo :name="section3Data.name"
+                     :role="section3Data.role"
+                     :type="'advisor'"/>
           </div>
         </div>
         <div>
@@ -104,7 +110,7 @@
 
   <!-- Quinta Sezione -->
     <section id="fifthSec">
-      <div class="section-container responsive-container">
+      <div class="section-container">
       <!-- Titolo sezione-->
         <sectionTitle :title="section5Data.secTitle"
                       :title2="section5Data.secTitle2"
@@ -140,7 +146,7 @@
 <script>
 
 // Components
-  import nameRole from "./mainComponents/nameRole.vue"
+  import extInfo from "./mainComponents/extInfo.vue"
   import sectionTitle from "./common/sectionTitle.vue"
   import sectionCard from "./mainComponents/sectionCard.vue"
   import btnApp from "./common/btnApp.vue";
@@ -151,7 +157,7 @@
     name:'appMain',
     components: {
       btnApp,
-      nameRole,
+      extInfo,
       sectionTitle,
       sectionCard
     },
@@ -159,17 +165,10 @@
       return {
         // Sez 1 Data
         section1Data: mainData.section1,
-
         // Sez 2 Data
-
         section2Data: mainData.section2,
-        featuredCourses: mainData.section2.featuredCourses,
-
-
         // Sez 3 Data
         section3Data: mainData.section3,
-
-
         // Sez 4 Data
         section4Data: mainData.section4,
         // Sez 5 Data
@@ -194,11 +193,19 @@ width: 70%;
   .service-section {
     @include d-flex('wrap', 'space-between', 'center');
   }
+
+.card-container {
+  @include d-flex('wrap', 'space-between', 'center')
+
+}
+  .container-card-services {
+    @include d-flex('wrap', 'space-between', 'center')
+  }
 // **** First Section ****
   .ceo-message{
     @extend .m-auto;
-    width: 55%;
-    padding: 6rem 0;
+    width: 65%;
+    padding: 7rem 0;
 
     .txtCeo {
       font-size: 2rem;
@@ -213,14 +220,15 @@ width: 70%;
     width: 15%;
     padding: 6rem 2rem 8rem 0;
   }
-  .section-container {
-    @include responsive-container(70%);
-    @extend .t-align-c;
-    padding: 5rem 0;
-  }
+
 
   main {
 
+      .section-container {
+        @include responsive-container(70%);
+        @extend .t-align-c;
+        padding: 5rem 0;
+      }
 
       #firstSec {
         background-image: url("@/assets/images/background-pattern-grid-line.png");
@@ -234,19 +242,12 @@ width: 70%;
       // Sezione statistiche
       .stats-container {
         padding-bottom: 6rem;
+        @include d-flex('wrap', 'space-around', 'center');
 
-        .statsN {
-          color: $material_jungle_green;
-          font-size: 2.5rem;
-        }
-        .stats {
-          @extend .uppercase;
-          display: inline-block;
-          padding: 1rem 2rem;
-          font-weight: bold;
-          font-size: 1.1rem;
-        }
       }
+    #lastSec {
+
+    }
   }
 
 </style>
