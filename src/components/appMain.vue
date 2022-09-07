@@ -5,10 +5,8 @@
       <div class="section-container">
         <div class="ceo-message">
           <h3 class="txtCeo">Let passion and determinations be the guide along the way and develop at your own pace that's comfortable</h3>
-          <div class="ceo">
-            <span>Fannie Moreno</span>
-            <span>/Founder & CEO</span>
-          </div>
+          <!-- Testimonial component -->
+          <nameRole :name="section3Data.name" :role="section1Data.role"/>
         </div>
         <!-- Statistiche -->
         <div class="stats-container">
@@ -44,31 +42,40 @@
     <!-- Seconda Sezione -->
     <section id="secondSec">
       <div class="section-container">
+        <!-- Titolo Sezione -->
 
         <sectionTitle :title="section2Data.secTitle"
                       :subTitle="section2Data.secSubTitle"
                       :highlight="section2Data.highlight"/>
 
+
+        <!-- Cards -->
+        <ul class="card-container">
+          <sectionCard v-for="(res, index) in section2Data.featuredCourses "
+                       :key="index"
+                       :dataSource="res"/>
+        </ul>
+        <!-- Bottone -->
         <btnApp message="View all courses" :type="2" />
 
-        <i class="fa-regular fa-file-lines"></i>
-        <i class="fa-regular fa-user"></i>
       </div>
     </section>
 
     <!-- Terza Sezione -->
     <section id="thirdSec">
       <div class="section-container">
-
+        <!-- Titolo Sezione -->
         <sectionTitle :title="section3Data.secTitle"
                       :title2="section3Data.secTitle2"
                       :highlight="section3Data.highlight"/>
 
-        <btnApp message="View all courses" :type="2" />
-
-        <div>
-          <img src="" alt="">
-          <div></div>
+        <!-- Sezione Testimonials -->
+        <div class="exp">
+          <img src="@/assets/images/testimonial-avata-02.jpg" alt="Img Testimonial Hollace">
+          <div>
+            <p>{{ section3Data.textSection }}</p>
+            <nameRole :name="section3Data.name" :role="section3Data.role"/>
+          </div>
         </div>
         <div>
           <img v-for="(parthner, index) in section3Data.parthList"
@@ -107,7 +114,8 @@
         <ul class="card-container">
           <sectionCard v-for="(res, index) in section5Data.offeredServices "
                        :key="index"
-                       :dataSource="res"/>
+                       :dataSource="res"
+                       :rev="'yes'"/>
         </ul>
         <img style="width: 100%" src="@/assets/images/home-6-services-image.png" alt="Image section" />
       </div>
@@ -125,12 +133,14 @@
         <btnApp message="Get started now" :type="1" />
       </div>
     </section>
+
   </main>
 </template>
 
 <script>
 
 // Components
+  import nameRole from "./mainComponents/nameRole.vue"
   import sectionTitle from "./common/sectionTitle.vue"
   import sectionCard from "./mainComponents/sectionCard.vue"
   import btnApp from "./common/btnApp.vue";
@@ -141,6 +151,7 @@
     name:'appMain',
     components: {
       btnApp,
+      nameRole,
       sectionTitle,
       sectionCard
     },
@@ -175,7 +186,11 @@
 
   @import "@/styles/general.scss";
 
-
+.exp {
+  @include d-flex('wrap', 'space-between', 'center');
+width: 70%;
+  @extend .m-auto;
+}
   .service-section {
     @include d-flex('wrap', 'space-between', 'center');
   }
@@ -188,25 +203,6 @@
     .txtCeo {
       font-size: 2rem;
       line-height: 3rem;
-    }
-
-    .ceo {
-      display: block;
-      padding: 2rem 0;
-
-      span:first-child,
-      span:last-child {
-        display: block;
-      }
-      span:first-child {
-        @extend .uppercase;
-        padding-bottom: 0.8rem;
-        font-weight: bold;
-      }
-      span:last-child {
-        color: $material_corduray;
-        font-size: 0.9rem;
-      }
     }
   }
 

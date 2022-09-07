@@ -4,6 +4,8 @@
     "secTitle2": "for my clients.",
     "secSubTitle": "together we can create",
     "highlight": "can provide",
+    "name": "Fannie Moreno",
+    "role": "Founder & CEO",
     "statisticsMaxCoach": [
       {
         "count":"1.926",
@@ -37,40 +39,64 @@
     "highlight": "courses",
     "featuredCourses": [
       {
-        "price":"$40",
+        "text":"$40",
         "title":"Learning to write as a Professional Author",
-        "lessons":"20",
-        "students":"50"
+        "icons": {
+          "icoTy": "fa-file-lines",
+          "icoTyText": "20 Lessons",
+          "icoTy2": "fa-user",
+          "icoTyText2": "50 Students"
+        }
       },
       {
-        "price":"$19.00",
+        "text":"$19.00",
         "title":"Open Programming courses for Everyone: Python",
-        "lessons":"17",
-        "students":"62"
+        "icons": {
+          "icoTy": "fa-file-lines",
+          "icoTyText": "17 Lessons",
+          "icoTy2": "fa-user",
+          "icoTyText2": "62 Students"
+        }
       },
       {
-        "price":"$39.00",
+        "text":"$39.00",
         "title":"Maser jQuery in a short Period of Time",
-        "lessons":"6",
-        "students":"51"
+        "icons": {
+          "icoTy": "fa-file-lines",
+          "icoTyText": "6 Lessons",
+          "icoTy2": "fa-user",
+          "icoTyText2": "51 Students"
+        }
       },
       {
-        "price":"Free",
+        "text":"Free",
         "title":"Customer-centric Info-Tech Strategies",
-        "lessons":"24",
-        "students":"769"
+        "icons": {
+          "icoTy": "fa-file-lines",
+          "icoTyText": "24 Lessons",
+          "icoTy2": "fa-user",
+          "icoTyText2": "769 Students"
+        }
       },
       {
         "price":"$26.00",
         "title":"Academic Listening and Note-taking",
-        "lessons":"14",
-        "students":"67"
+        "icons": {
+          "icoTy": "fa-file-lines",
+          "icoTyText": "14 Lessons",
+          "icoTy2": "fa-user",
+          "icoTyText2": "67 Students"
+        }
       },
       {
-        "price":"$59.00",
+        "text":"$59.00",
         "title":"Introduction to Javascript for Beginners",
-        "lessons":"14",
-        "students":"76"
+        "icons": {
+          "icoTy": "fa-file-lines",
+          "icoTyText": "14 Lessons",
+          "icoTy2": "fa-user",
+          "icoTyText2": "76 Students"
+        }
       }
     ]
   },
@@ -103,7 +129,10 @@
         "logo": "client-logo-colored-06.png",
         "name": "Sixbase"
       }
-    ]
+    ],
+    "name": "Mina Hollace",
+    "role": "freelancer",
+    "textSection": "I am Free to learn at my own pace, follow my own schedule and choose the subject i like. Great Study Portal for People like me."
   },
   "section4": {
     "secTitle": "Latest on",
@@ -111,7 +140,7 @@
     "highlight": "Our Blogs",
     "latestArticles": [
       {
-        "img": "artist-blog-01-480x325.jpg.jpg",
+        "img": "artist-blog-01-480x325.jpeg",
         "text":"artist",
         "title":"Brush Strokes Energize Trees in Paintings",
         "icons": {
