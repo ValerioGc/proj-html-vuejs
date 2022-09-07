@@ -183,7 +183,6 @@
       // Services
       .service-section {
         @include d-flex('', 'center', 'center');
-        height: 80vh;
 
         .container-services {
           width: calc(90%);
