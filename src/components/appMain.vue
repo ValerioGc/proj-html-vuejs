@@ -39,16 +39,11 @@
 
   <!-- Seconda Sezione -->
     <section id="secondSec">
-      <div class="section-container">
-        <!-- Titolo Sezione -->
-        <sectionTitle :title="section2Data.secTitle" :subTitle="section2Data.secSubTitle" :highlight="section2Data.highlight"/>
-        <!-- Cards -->
-        <ul class="card-container">
-          <sectionCard v-for="(res, index) in section2Data.featuredCourses " :key="index" :dataSource="res"/>
-        </ul>
-        <!-- Bottone -->
-        <btnApp message="View all courses" :type="2" />
-      </div>
+        <mainSection
+            :dataObj="section2Data"
+            :dataObjDet="section2Data.featuredCourses"
+            :btn="'yes'"
+            :btnTy="2"/>
     </section>
 
   <!-- Terza Sezione -->
@@ -77,14 +72,9 @@
 
   <!-- Quarta Sezione -->
     <section id="fourthSec">
-      <div class="section-container">
-      <!-- Titolo Sezione -->
-        <sectionTitle :title="section4Data.secTitle" :subTitle="section4Data.secSubTitle" :highlight="section4Data.highlight"/>
-        <!-- Cards -->
-        <ul class="card-container">
-          <sectionCard v-for="(res, index) in section4Data.latestArticles " :key="index" :dataSource="res"/>
-        </ul>
-      </div>
+      <mainSection
+          :dataObj="section4Data"
+          :dataObjDet="section4Data.latestArticles"/>
     </section>
 
   <!-- Quinta Sezione -->
@@ -119,6 +109,7 @@
   import sectionTitle from "./common/sectionTitle.vue";
   import sectionCard from "./mainComponents/sectionCard.vue";
   import btnApp from "./common/btnApp.vue";
+  import mainSection from "@/components/mainComponents/mainSection.vue";
 // DB
   import mainData from "@/db/mainData.json"
 
@@ -127,6 +118,7 @@
     components: {
       btnApp,
       extInfo,
+      mainSection,
       sectionTitle,
       sectionCard
     },
