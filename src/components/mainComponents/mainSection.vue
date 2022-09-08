@@ -5,11 +5,12 @@
         :title="dataObj.secTitle"
         :title2="dataObj.secTitle2"
         :subTitle="dataObj.secSubTitle"
-        :highlight="dataObj.highlight"
-        :reverse="rev" />
+        :highlight="dataObj.highlight" />
     <!-- Cards -->
     <ul v-if="cards !== undefined" class="card-container">
-      <sectionCard v-for="(res, index) in dataObjDet " :key="index" :dataSource="res"/>
+      <sectionCard v-for="(res, index) in dataObjDet " :key="index"
+                   :dataSource="res"
+                   :rev="revs" />
     </ul>
     <!-- Bottone -->
     <btnApp v-if="btn !== undefined" message="View all courses" :type="btnTy" />
@@ -30,7 +31,7 @@
       cards: String,
       btn: String,
       btnTy: Number,
-      rev: String,
+      revs: String,
     },
     components: {
       btnApp,

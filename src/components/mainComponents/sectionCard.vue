@@ -2,7 +2,9 @@
       <li class="card">
         <img v-if="dataSource.img !== undefined" :src="require('@/assets/images/'+ dataSource.img)" alt="'img card">
         <div class="txtCard">
-          <sectionTitle  :title="dataSource.title" :subTitle="dataSource.text" :reverse="rev"/>
+          <sectionTitle  :title="dataSource.title"
+                         :subTitle="dataSource.text"
+                         :reverse="rev"/>
           <!-- Sezione Icone -->
           <div class="icoSec-Info"  v-if="dataSource.icons !== undefined">
             <span>

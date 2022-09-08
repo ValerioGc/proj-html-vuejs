@@ -85,7 +85,7 @@
           :dataObj="section5Data"
           :dataObjDet="section5Data.offeredServices"
           :cards="'yes'"
-          :rev="'reverse'"/>
+          :revs="'reverse'"/>
         <img class="fifthSec-img" src="@/assets/images/home-6-services-image.png" alt="Image fifth section" />
     </section>
 
@@ -473,7 +473,18 @@
             width: 5rem;
             margin: 1rem 0;
           }
+          .rev-title-container {
+            .section-title {
+              font-size: 1rem;
+              color: $dark_color;
+            }
 
+            .section-subtitle {
+              font-size: 1rem;
+              color: $cube_dove_gray;
+              font-weight: 400;
+            }
+          }
           .section-title-container {
             @extend .t-align-l;
 
