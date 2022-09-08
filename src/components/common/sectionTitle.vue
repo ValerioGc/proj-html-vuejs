@@ -74,7 +74,7 @@
       .section-subtitle {
         @extend .uppercase;
         color: $cube_dove_gray;
-        font-weight: lighter;
+        font-weight: normal;
       }
 
       .last-section-subtitle {
