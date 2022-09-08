@@ -86,8 +86,8 @@
         <ul class="card-container">
           <sectionCard v-for="(res, index) in section5Data.offeredServices " :key="index" :dataSource="res" :rev="'yes'"/>
         </ul>
-        <img class="fifthSec-img" src="@/assets/images/home-6-services-image.png" alt="Image fifth section" />
       </div>
+        <img class="fifthSec-img" src="@/assets/images/home-6-services-image.png" alt="Image fifth section" />
     </section>
 
   <!-- Ultima Sezione -->
@@ -449,6 +449,13 @@
 
     // **** Fifth Section ****
     #fifthSec {
+      @extend .t-align-c;
+
+      .fifthSec-img {
+        width: 70%;
+        object-fit: contain;
+      }
+
       .card-container {
         @include d-flex('wrap', 'space-between', 'center');
         @extend .t-align-l;
@@ -482,9 +489,10 @@
           }
         }
       }
-      .fifthSec-img {
-        width: 100%;
-      }
+    }
+
+    #lastSec {
+      margin: 4rem auto;
     }
   }
 </style>
