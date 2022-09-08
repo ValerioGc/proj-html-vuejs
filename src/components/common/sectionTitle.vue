@@ -35,6 +35,12 @@
     color: $material_jungle_green;
     font-weight: lighter;
   }
+  .standard-title {
+    @extend .capitalize;
+    @extend .bold;
+    padding: 0.7rem 0 ;
+    font-size: 2rem;
+  }
 
   .rev-title-container {
     @extend .cubeWhiteColor;
@@ -54,13 +60,6 @@
         text-transform: uppercase!important;
       }
     }
-  }
-
-  .standard-title {
-    @extend .capitalize;
-    @extend .bold;
-    padding: 0.7rem 0 ;
-    font-size: 2rem;
   }
 
   .section-title-container {
@@ -83,7 +82,5 @@
           color: $dark_color;
         }
       }
-
-
 
 </style>

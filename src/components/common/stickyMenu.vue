@@ -23,12 +23,12 @@
 
 </script>
 
-
 <style lang="scss" scoped>
 
   @import "@/styles/general.scss";
 
   .sticky-menu {
+    @extend .t-align-c;
     position: fixed;
     top: 25vh;
     right: 0;
@@ -36,7 +36,7 @@
     background-color: $median_hint_of_red;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    text-align: center;
+
 
     a {
       display: block;
@@ -44,7 +44,6 @@
       font-size: 1.3rem;
       color: $dark_color;
       text-shadow: 0 0 1px $material_corduray;
-
 
       &:hover {
         @extend .standard-hover;

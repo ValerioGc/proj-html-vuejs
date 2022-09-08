@@ -28,14 +28,14 @@
 
   // Advisor
   .extInfo {
+    @extend .t-align-c;
     display: inline-block;
     padding: 2rem 0;
-    text-align: center;
 
     span:first-child,
     span:last-child {
+      @extend .t-align-l;
       display: block!important;
-      text-align: left;
     }
     span:first-child {
       @extend .uppercase;
@@ -61,7 +61,6 @@
     span:last-child {
       @extend .uppercase;
       display: block!important;
-
     }
     span:first-child {
       color: $material_jungle_green;

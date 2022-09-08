@@ -184,15 +184,24 @@
       }
       // Services
       .service-section {
-        @include d-flex('', 'center', 'center');
+        @include d-flex('wrap', 'center', 'center');
 
         .container-services {
           width: 40%;
-          text-align: left;
+          @extend .t-align-l;
+
+          @media (max-width: $medium) {
+            width: 70%;
+            margin: 3rem auto;
+            padding-left: 1rem;
+          }
 
           .section-title {
-            font-size: 4rem;
             padding-bottom: 2rem;
+            font-size: 4rem;
+            @media (max-width: $medium) {
+              font-size: 2.5rem;
+            }
           }
           .section-subtitle {
             @extend .bold;
@@ -220,6 +229,11 @@
           height: 100%;
           width: 45%;
 
+          @media (max-width: $medium) {
+            width: 70%;
+            justify-content: center;
+          }
+
           .card-container {
             @include d-flex('wrap', 'space-between', 'start');
             height: 100%;
@@ -230,6 +244,11 @@
             & li:nth-child(4) {
               align-self: flex-end;
               margin-top: 6rem;
+
+              @media (max-width: $medium) {
+                align-self: normal;
+                margin-top: 0;
+              }
             }
             & li:nth-child(1),
             & li:nth-child(2) {
@@ -238,9 +257,14 @@
             }
 
             .card {
-              text-align: left;
+              @extend .t-align-l;
               padding: 1.5rem 1rem 0 ;
               width: calc(50% - 1rem);
+
+              @media (max-width: $medium) {
+                width: unset;
+                margin-bottom: 1.5rem;
+              }
 
               box-shadow: 0 0 5px -1px $dark_color;
 
@@ -260,10 +284,11 @@
           }
         }
         .container-services * {
-          text-align: left;
+          @extend .t-align-l;
         }
       }
     }
+
     // **** Second Section ****
     #secondSec {
       padding: 1rem 0 0.5rem;
@@ -278,26 +303,33 @@
         flex-direction: row;
         padding: 1rem ;
         width: 45%;
+
         @media (max-width: $medium) {
           width: 100%;
           flex-wrap: wrap;
         }
+
         .txtCard {
           padding: 2rem ;
         }
-        .section-title {
+
+        .section-title,
+        .section-subtitle {
           @extend .bold;
-          text-align: left;
+          @extend .t-align-l;
+        }
+
+        .section-title {
           font-size: 1.2rem;
           padding-bottom: 1rem;
         }
+
         .section-subtitle {
-          @extend .bold;
-          text-align: left;
           font-size: 1.2rem!important;
           color: $cube_mountain_meadow;
           text-shadow: 2px 2px 2px $dark_color;
         }
+
         .icoSec-Info  {
           @include d-flex('wrap', 'space-between', 'center');
         }
@@ -321,13 +353,14 @@
         @include d-flex('wrap', 'space-between', 'center');
         width: 70%;
         margin: 3rem auto 5rem;
+
         @media (max-width: $medium) {
           justify-content: center;
         }
 
           .testimonial-text {
             width: 70%;
-            text-align: left;
+            @extend .t-align-l;
             padding: 0.2rem 0.5rem;
 
             p {
@@ -335,7 +368,7 @@
             }
           }
 
-        .testimonial-cont{
+          .testimonial-cont {
           @extend .pos-relative;
           align-self: stretch;
           padding-bottom: 1rem;
@@ -344,14 +377,16 @@
             border-radius: 50%;
             width: 10rem;
           }
+
           .decoration {
-            position: absolute;
-            transform: translate(-95%, 110%);
             z-index: -1;
             width: 6rem;
+            position: absolute;
+            transform: translate(-95%, 110%);
           }
+        }
       }
-    }
+
       .parth-logo-container{
         @include d-flex('wrap', 'space-around', 'center');
 
@@ -367,7 +402,6 @@
 
           @media (max-width: $medium) {
             margin-right: 1rem;
-
           }
         }
       }
@@ -406,17 +440,17 @@
           }
         }
         .section-title-container {
-            text-align: left;
+          @extend .t-align-l;
 
-            .section-title {
-              font-size: 1.4rem;
-              padding: 1rem 0;
-            }
+          .section-title {
+            font-size: 1.4rem;
+            padding: 1rem 0;
+          }
 
-            .section-subtitle {
-              font-weight: normal;
-              padding-top: 1rem;
-            }
+          .section-subtitle {
+            font-weight: normal;
+            padding-top: 1rem;
+          }
           }
         }
     }
@@ -425,7 +459,7 @@
     #fifthSec {
       .card-container {
         @include d-flex('wrap', 'space-between', 'center');
-        text-align: left;
+        @extend .t-align-l;
         padding: 5rem 0;
 
         @media (max-width: $medium) {

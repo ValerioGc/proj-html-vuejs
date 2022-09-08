@@ -25,7 +25,6 @@
   .srcBar {
     @extend .pos-relative;
 
-
     #search {
       width: 100%;
       height: 3rem;

@@ -10,6 +10,7 @@
 
 <script>
 
+// Components
   import appHeader from './components/appHeader.vue';
   import appMain from './components/appMain.vue';
   import appFooter from './components/appFooter.vue';
@@ -34,8 +35,4 @@
 
 </script>
 
-<style lang="scss">
-
-  @import "@/styles/general.scss";
-
-</style>
+<style lang="scss"> @import "@/styles/general.scss"; </style>

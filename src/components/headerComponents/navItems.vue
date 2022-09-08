@@ -4,6 +4,11 @@
       {{navL[idx].name}}
       <i class="fa-solid fa-angle-down"></i>
     </a>
+    <ul class="dropdown">
+      <li v-for="n in 3" :key="n">
+        Link
+      </li>
+    </ul>
   </li>
 </template>
 
@@ -23,20 +28,47 @@
 
   @import "@/styles/general.scss";
 
-  .navLName {
-    @extend .cubeWhiteColor;
-    margin-right: 1rem ;
-    padding-right: 5px;
+  .navL-container {
 
-    @media (max-width: $medium) {
+    &:hover .dropdown {
+      @extend .standardTransition;
+      display: block;
+    }
+
+    .navLName {
+      @extend .cubeWhiteColor;
+      margin-right: 1rem ;
+      @extend .pos-relative;
+
+        @media (max-width: $large) {
+          font-size: 0.8rem;
+          margin-right: 0.5rem ;
+        }
+        @media (max-width: $medium) {
+          display: none;
+        }
+
+      &:hover {
+        @extend .standard-hover;
+      }
+      &:hover .navL-container{
+        transform: translateY(50px);
+      }
+    }
+    .dropdown {
       display: none;
-    }
+      position: absolute;
+      background-color: $cube_silver;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding-right: 0;
 
-    &:hover {
-      @extend .standard-hover;
-    }
-    &:hover .navL-container{
-      transform: translateY(50px);
+      li {
+        padding: 0.7rem 1.5rem;
+      }
+      li:not(li:last-child) {
+        border-bottom: 1px solid black;
+      }
     }
   }
 

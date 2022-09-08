@@ -79,8 +79,8 @@
     background-position: top;
 
     .header-top {
-      @include d-flex('no', 'space-between', 'center');
       @include responsive-container(70%);
+      @include d-flex('no', 'space-between', 'center');
 
       .logo {
         width: 13%;
@@ -92,14 +92,16 @@
 
       nav {
         @include d-flex('no', 'end', 'center');
-        padding: 1rem 0;
         @extend .bold;
+        padding: 1rem 0;
 
         ul {
           @include d-flex('no', 'space-between', 'center');
           padding-right: 1rem;
           flex-basis: 85%;
+
           .fa-bars {
+            @extend .bold;
             color: $cube_white;
             display: none;
 

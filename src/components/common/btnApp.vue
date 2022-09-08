@@ -20,7 +20,7 @@
 
 <style lang="scss" scoped>
 
-  @import "../../styles/general.scss";
+  @import "@/styles/general.scss";
 
   .btn {
     @extend .cubeWhiteColor;

@@ -46,7 +46,6 @@
       @extend .standardTransition;
       background-color: $cube_white;
       box-shadow: 0 0 5px -2px $dark_color;
-
     }
   }
 

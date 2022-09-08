@@ -2,9 +2,7 @@
   <div id="jumbo" class="responsive-container ">
     <div>
       <!-- Titolo -->
-      <sectionTitle :reverse="'reverse'"
-                    :title="'Learn at your Own Pace!'"
-                    :subTitle="'get teamed up with people of the same will.'"/>
+      <sectionTitle :reverse="'reverse'" :title="'Learn at your Own Pace!'" :subTitle="'get teamed up with people of the same will.'"/>
       <!-- Bottone -->
       <btnApp :message="'Get started for free'" :type="1"/>
     </div>
@@ -52,7 +50,6 @@
     @extend .t-align-c;
     @extend .cubeWhiteColor;
     @include responsive-container(80%);
-
     padding-top: 6rem ;
 
     .jumboTitle {
@@ -93,10 +90,16 @@
         padding-right: 13%;
         align-self: flex-end;
         object-position: top;
+
+        @media (max-width: $tablet) {
+          height: unset;
+          padding-right: 4%;
+        }
       }
 
       .yt {
         cursor: pointer;
+        width: 8%;
 
         &:hover {
           filter: brightness(80%);

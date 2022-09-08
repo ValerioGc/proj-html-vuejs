@@ -60,6 +60,7 @@
       }
     }
   }
+
 </script>
 
 <style lang="scss">
@@ -122,8 +123,8 @@
         }
       }
       .sub-footer {
-        padding: 3rem 0;
         @extend .t-align-c;
+        padding: 3rem 0;
       }
     }
   }
