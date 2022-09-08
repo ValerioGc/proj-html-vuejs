@@ -170,7 +170,7 @@
       // CEO Msg
       .ceo-message {
         @extend .m-auto;
-        width: 65%;
+        width: 50%;
         padding: 7rem 0;
         .txtCeo {
           font-size: 2rem;
@@ -238,16 +238,17 @@
             }
 
             .card {
+              text-align: left;
+              padding: 1.5rem 1rem 0 ;
               width: calc(50% - 1rem);
 
-              border: 1px solid $dark_color;
-              box-shadow: 0 0 5px -2px $dark_color;
+              box-shadow: 0 0 5px -1px $dark_color;
 
               .rev-title-container {
                 color: $dark_color;
               }
               .section-title {
-                font-size: 1rem;
+                font-size: 1.2rem;
               }
 
               img {
