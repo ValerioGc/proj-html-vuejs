@@ -42,6 +42,7 @@
         <mainSection
             :dataObj="section2Data"
             :dataObjDet="section2Data.featuredCourses"
+            :cards="'yes'"
             :btn="'yes'"
             :btnTy="2"/>
     </section>
@@ -74,30 +75,26 @@
     <section id="fourthSec">
       <mainSection
           :dataObj="section4Data"
+          :cards="'yes'"
           :dataObjDet="section4Data.latestArticles"/>
     </section>
 
   <!-- Quinta Sezione -->
     <section id="fifthSec">
-      <div class="section-container">
-      <!-- Titolo sezione-->
-        <sectionTitle :title="section5Data.secTitle" :title2="section5Data.secTitle2" :highlight="section5Data.highlight" :subTitle="section5Data.secSubTitle" />
-      <!-- Cards -->
-        <ul class="card-container">
-          <sectionCard v-for="(res, index) in section5Data.offeredServices " :key="index" :dataSource="res" :rev="'yes'"/>
-        </ul>
-      </div>
+      <mainSection
+          :dataObj="section5Data"
+          :dataObjDet="section5Data.offeredServices"
+          :cards="'yes'"
+          :rev="'reverse'"/>
         <img class="fifthSec-img" src="@/assets/images/home-6-services-image.png" alt="Image fifth section" />
     </section>
 
   <!-- Ultima Sezione -->
     <section id="lastSec">
-      <div class="section-container">
-      <!-- Titolo sezione-->
-        <sectionTitle :title="section6Data.secTitle" :subTitle="section6Data.secSubTitle" :highlight="section6Data.highlight" :subTitleType="section6Data.subTitleType"/>
-      <!-- Bottone -->
-        <btnApp message="Get started now" :type="1" />
-      </div>
+      <mainSection
+          :dataObj="section6Data"
+          :btn="'yes'"
+          :btnTy="2" />
     </section>
   </main>
 </template>
@@ -472,20 +469,31 @@
             width: 60%;
           }
 
-          .section-subtitle,
-          .section-title {
-            color: $dark_color;
-          }
-          .section-title {
-            font-size: 1rem;
-            color: $dark_color;
-          }
-          .section-subtitle {
-            font-size: 1rem;
-            color: $cube_dove_gray;
-          }
           img {
             width: 5rem;
+            margin: 1rem 0;
+          }
+
+          .section-title-container {
+            @extend .t-align-l;
+
+            .section-subtitle,
+            .section-title {
+              color: $dark_color;
+              padding: 0.5rem 0;
+            }
+
+            .section-title {
+              font-size: 1rem;
+              color: $dark_color;
+            }
+
+            .section-subtitle {
+              font-size: 1rem;
+              color: $cube_dove_gray;
+              font-weight: 400;
+            }
+
           }
         }
       }

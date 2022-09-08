@@ -3,10 +3,12 @@
     <!-- Titolo Sezione -->
     <sectionTitle
         :title="dataObj.secTitle"
+        :title2="dataObj.secTitle2"
         :subTitle="dataObj.secSubTitle"
-        :highlight="dataObj.highlight"/>
+        :highlight="dataObj.highlight"
+        :reverse="rev" />
     <!-- Cards -->
-    <ul class="card-container">
+    <ul v-if="cards !== undefined" class="card-container">
       <sectionCard v-for="(res, index) in dataObjDet " :key="index" :dataSource="res"/>
     </ul>
     <!-- Bottone -->
@@ -25,8 +27,10 @@
     props: {
       dataObj: Object,
       dataObjDet: Array,
+      cards: String,
       btn: String,
       btnTy: Number,
+      rev: String,
     },
     components: {
       btnApp,
