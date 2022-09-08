@@ -30,6 +30,7 @@
                 <span>{{ service }}</span>
               </li>
             </ul>
+            <!-- Bottone -->
             <btnApp message="Get started for free" />
           </div>
         </div>
@@ -165,6 +166,7 @@
     // **** First Section ****
     #firstSec {
       background-image: url("@/assets/images/background-pattern-grid-line.png");
+
       // CEO Msg
       .ceo-message {
         @extend .m-auto;
@@ -185,22 +187,49 @@
         @include d-flex('', 'center', 'center');
 
         .container-services {
-          width: calc(90%);
-          padding-left: 3rem;
+          width: 40%;
+          text-align: left;
+
+          .section-title {
+            font-size: 4rem;
+            padding-bottom: 2rem;
+          }
+          .section-subtitle {
+            @extend .bold;
+          }
+
+          ul li {
+            @extend .capitalize;
+            font-size: 1.2rem;
+            padding-bottom: 1rem;
+
+            i {
+              margin-right: 1rem;
+              color: $material_jungle_green;
+              @extend .bold;
+            }
+          }
+
+          .btn {
+            margin: 1.5rem auto;
+          }
+
         }
         .container-card-services {
           @include d-flex('wrap', 'space-between', 'center');
           height: 100%;
+          width: 45%;
 
           .card-container {
             @include d-flex('wrap', 'space-between', 'start');
             height: 100%;
-            width: calc(65%);
+            width: 85%;
 
             // Cards
             & li:nth-child(2),
             & li:nth-child(4) {
               align-self: flex-end;
+              margin-top: 6rem;
             }
             & li:nth-child(1),
             & li:nth-child(2) {
@@ -209,7 +238,7 @@
             }
 
             .card {
-              width: calc(100% / 2 - 1rem);
+              width: calc(50% - 1rem);
 
               border: 1px solid $dark_color;
               box-shadow: 0 0 5px -2px $dark_color;
@@ -321,8 +350,7 @@
             width: 6rem;
           }
       }
-      }
-
+    }
       .parth-logo-container{
         @include d-flex('wrap', 'space-around', 'center');
 
