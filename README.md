@@ -85,12 +85,12 @@
   
   <br/>
 
-  <img src="/previews/preview-mc.png" alt="preview1" /> 
-  <img src="/previews/preview-mc2.png" alt="preview2" /> 
-  <img src="/previews/preview-mc3.png" alt="preview3" /> 
-  <img src="/previews/preview-mc4.png" alt="preview4" />  
-  <img src="/previews/preview-mc5.png" alt="preview5" /> 
-  <img src="/previews/preview-mc6.png" alt="preview6" /> 
+  <img src="/previews/mc.png" alt="preview1" /> 
+  <img src="/previews/mc2.png" alt="preview2" /> 
+  <img src="/previews/mc3.png" alt="preview3" /> 
+  <img src="/previews/mc4.png" alt="preview4" />  
+  <img src="/previews/mc5.png" alt="preview5" /> 
+  <img src="/previews/mc6.png" alt="preview6" /> 
 
 </details>
 
