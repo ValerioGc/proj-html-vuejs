@@ -1,6 +1,6 @@
 # proj-html-vuejs
 
-> _Reproduction of the Whatsapp Webapp_
+> _Reproduction of a maxCoach webpage based on a wordpress template using Vue CLI_
 
 <br />
 
@@ -38,9 +38,9 @@
 <table align="center">
   <thead>
     <tr>
-      <th colspan="4"> Languages</th>
+      <th colspan="3"> Languages</th>
       <th colspan="1">Framework</th>
-      <th colspan="3">Libraries / API</th>
+      <th colspan="1">Libraries / API</th>
     </tr>
   </thead>
   <tbody align=center>
@@ -60,9 +60,6 @@
       <td>
         <img align="center" src="https://cdn.worldvectorlogo.com/logos/fontawesome-1.svg" width="36" height="36" alt="Font-Awesome" /> 
       </td>
-      <td>
-        <img align="center" src="https://raw.githubusercontent.com/moment/luxon/96994411ae941ce4f2c6aeff55d6f2ac9c21d908/site/docs/_media/Luxon_icon.svg" width="36" height="36" alt="Luxon 3.x" />
-      </td>
     </tr>
     <tr>
       <td>
@@ -79,9 +76,6 @@
       </td>
       <td>
         <a href="https://vuejs.org/" target="_blank" rel="noreferrer">Font-Awersome</a>
-      </td>
-      <td>
-        <a href="https://moment.github.io/luxon/#/" target="_blank" rel="noreferrer">Luxon 3</a>
       </td>
     </tr>
   </tbody>
