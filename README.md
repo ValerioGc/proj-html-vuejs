@@ -74,7 +74,7 @@
 ## *_Previews:_*
 
 ![Preview 1](/previews/mc.gif)
-![Preview 2](/previews/mc-thumb.png)
+![Preview 2](/previews/mc-thumbs.png)
 
 
 --------
