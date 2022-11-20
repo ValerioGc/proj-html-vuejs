@@ -9,20 +9,20 @@
 <table align="center">
   <tbody>
     <tr>
-        <td>:arrow_forward: Project setup</td>
-        <td>npm install</td>  
+        <td>:arrow_forward: Project setup<:/td>
+        <td><strong>npm install</strong></td>  
     </tr>
     <tr>
-        <td>:arrow_forward: Compiles and hot-reloads for development</td>
-        <td>npm run serve</td>
+        <td>:arrow_forward: Compiles and hot-reloads for development:</td>
+        <td><strong>npm run serve</strong></td>
     </tr>      
     <tr>
-        <td>:arrow_forward: Compiles and minifies for production</td>
-        <td>npm run build</td>
+        <td>:arrow_forward: Compiles and minifies for production:</td>
+        <td><strong>npm run build</strong></td>
     </tr>
     <tr>
-        <td>:arrow_forward: Lints and fixes files</td>
-        <td>npm run lint</td>
+        <td>:arrow_forward: Lints and fixes files:</td>
+        <td><strong>npm run lint</strong></td>
     </tr>
   </tbody>
 </table>
