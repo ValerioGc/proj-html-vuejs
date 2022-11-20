@@ -100,7 +100,7 @@
   
   <br/>
 
-  <img src="/previews/mc.png" alt="preview1" /> 
+  <img src="/previews/mc1.png" alt="preview1" /> 
   <img src="/previews/mc2.png" alt="preview2" /> 
   <img src="/previews/mc3.png" alt="preview3" /> 
   <img src="/previews/mc4.png" alt="preview4" />  
