@@ -9,7 +9,7 @@
 <table align="center">
   <tbody>
     <tr>
-        <td>:arrow_forward: Project setup<:/td>
+        <td>:arrow_forward: Project setup:</td>
         <td><strong>npm install</strong></td>  
     </tr>
     <tr>
