@@ -1,7 +1,7 @@
 # proj-html-vuejs
 
 > _Reproduction of a maxCoach webpage based on a wordpress template using Vue CLI_
-
+ 
 <br />
 
 ## *_Setup Project_*
